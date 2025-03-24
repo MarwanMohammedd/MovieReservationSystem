@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MovieReservationSystem.Model/1.0.0": {
+        "runtime": {
+          "MovieReservationSystem.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MovieReservationSystem.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
