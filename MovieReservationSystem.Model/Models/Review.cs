@@ -9,6 +9,6 @@ namespace MovieReservationSystem.Model.Models{
         public int Rate { get; set; } = 0;
 
         public Movie? Movie { get; set; }
-        public User? User { get; set; }
+        public ApplicationUser? User { get; set; }
     }
 }

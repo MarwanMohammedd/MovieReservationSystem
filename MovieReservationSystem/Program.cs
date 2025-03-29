@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.DataAccess.Data;
+using MovieReservationSystem.Model.Models;
 
 namespace MovieReservationSystem
 {
@@ -12,11 +14,16 @@ namespace MovieReservationSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            
             builder.Services.AddDbContext<ApplicationDBContext>(
                 options=>{
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseConnectionString"));
                 }
             );
+
+            builder.Services.AddIdentity<ApplicationUser , IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDBContext>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
