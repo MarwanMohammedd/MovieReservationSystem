@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using MovieReservationSystem.DataAccess.Repository;
+using MovieReservationSystem.DataAccess.UnitOfWork;
 
 namespace MovieReservationSystem.Controllers;
 

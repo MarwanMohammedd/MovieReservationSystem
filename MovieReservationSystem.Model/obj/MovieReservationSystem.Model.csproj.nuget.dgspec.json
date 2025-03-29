@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {}
+    "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
+    "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj",
+        "projectUniqueName": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj",
         "projectName": "MovieReservationSystem.Model",
-        "projectPath": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj",
+        "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj",
         "packagesPath": "C:\\Users\\Marwan Rabie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.Model\\obj\\",
+        "outputPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Marwan Rabie\\AppData\\Roaming\\NuGet\\NuGet.Config",
