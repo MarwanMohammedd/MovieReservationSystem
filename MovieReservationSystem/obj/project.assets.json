@@ -4147,11 +4147,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem\\MovieReservationSystem.csproj",
+      "projectUniqueName": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\MovieReservationSystem.csproj",
       "projectName": "MovieReservationSystem",
-      "projectPath": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem\\MovieReservationSystem.csproj",
+      "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\MovieReservationSystem.csproj",
       "packagesPath": "C:\\Users\\Marwan Rabie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem\\obj\\",
+      "outputPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Marwan Rabie\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4168,11 +4168,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj"
+            "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj": {
+              "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj"
             },
-            "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
-              "projectPath": "C:\\Users\\Marwan Rabie\\Desktop\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj"
+            "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
+              "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj"
             }
           }
         }
