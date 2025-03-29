@@ -21,3 +21,4 @@ D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\refint\MovieReservationSystem.Model.dll
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.pdb
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\ref\MovieReservationSystem.Model.dll
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
