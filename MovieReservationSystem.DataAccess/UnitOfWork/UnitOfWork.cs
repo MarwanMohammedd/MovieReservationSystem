@@ -10,13 +10,13 @@ namespace MovieReservationSystem.DataAccess.UnitOfWork
             this.applicationDBContext=applicationDBContext;
         }
 
-        public void Dispose()
+        public async void Dispose()
         {
-            applicationDBContext.Dispose();
+            await applicationDBContext.DisposeAsync();
         }
-        public void Save()
+        public async void Save()
         {
-            applicationDBContext.SaveChanges();
+            await applicationDBContext.SaveChangesAsync();
         }
     }
 }

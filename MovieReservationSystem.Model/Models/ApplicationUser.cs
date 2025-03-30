@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 
 namespace MovieReservationSystem.Model.Models{
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser<int>
     {
         public String FullName { get; set; } = null!;
         public IEnumerable<Review>? Reviews { get; set; }
