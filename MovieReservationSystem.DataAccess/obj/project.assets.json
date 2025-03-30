@@ -4298,19 +4298,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marwan Rabie\\.nuget\\packages\\": {}
+    "C:\\Users\\Ahmed\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj",
+      "projectUniqueName": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj",
       "projectName": "MovieReservationSystem.DataAccess",
-      "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Marwan Rabie\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\obj\\",
+      "projectPath": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+      "outputPath": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Marwan Rabie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4324,8 +4329,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
-              "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj"
+            "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
+              "projectPath": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj"
             }
           }
         }
@@ -4334,7 +4339,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -4371,7 +4382,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
