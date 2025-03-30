@@ -930,7 +930,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.3"
         },
         "runtime": {
-          "MovieReservationSystem.DataAccess.dll": {}
+          "MovieReservationSystem.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "MovieReservationSystem.Model/1.0.0": {
@@ -938,7 +941,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.3"
         },
         "runtime": {
-          "MovieReservationSystem.Model.dll": {}
+          "MovieReservationSystem.Model.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

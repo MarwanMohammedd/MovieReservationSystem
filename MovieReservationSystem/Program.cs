@@ -14,12 +14,14 @@ namespace MovieReservationSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            
-            builder.Services.AddDbContext<ApplicationDBContext>(
-                options=>{
-                    options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseConnectionString"));
-                }
-            );
+
+            builder.Services.AddDbContext<ApplicationDBContext>(options =>
+            {
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DataBaseConnectionString"),
+                    b => b.MigrationsAssembly("MovieReservationSystem")
+                );
+            });
 
             builder.Services.AddIdentity<ApplicationUser , IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDBContext>();
