@@ -21,7 +21,7 @@ namespace MovieReservationSystem
                 }
             );
 
-            builder.Services.AddIdentity<ApplicationUser , IdentityRole>()
+            builder.Services.AddIdentity<ApplicationUser , IdentityRole<int>>()
             .AddEntityFrameworkStores<ApplicationDBContext>();
 
             var app = builder.Build();
