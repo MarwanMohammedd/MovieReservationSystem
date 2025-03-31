@@ -1,8 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MovieReservationSystem.Model.Models{
     public class Review
     {
+        [ForeignKey("User")]
         public int UserId { get; set; }
         public int MovieId { get; set; }
         public string? Commnet { get; set; }

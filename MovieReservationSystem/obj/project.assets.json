@@ -1591,7 +1591,7 @@
         "dependencies": {
           "MovieReservationSystem.Model": "1.0.0",
           "microsoft.aspnetcore.identity.entityframeworkcore": "8.0.3",
-          "microsoft.entityframeworkcore.sqlserver": "8.0.3"
+          "microsoft.entityframeworkcore.sqlserver": "9.0.3"
         },
         "compile": {
           "bin/placeholder/MovieReservationSystem.DataAccess.dll": {}
@@ -4320,19 +4320,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marwan Rabie\\.nuget\\packages\\": {}
+    "C:\\Users\\Ahmed\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\MovieReservationSystem.csproj",
+      "projectUniqueName": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.csproj",
       "projectName": "MovieReservationSystem",
-      "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\MovieReservationSystem.csproj",
-      "packagesPath": "C:\\Users\\Marwan Rabie\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\obj\\",
+      "projectPath": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.csproj",
+      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+      "outputPath": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Marwan Rabie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4346,11 +4351,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj": {
-              "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj"
+            "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj": {
+              "projectPath": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.DataAccess\\MovieReservationSystem.DataAccess.csproj"
             },
-            "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
-              "projectPath": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj"
+            "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj": {
+              "projectPath": "D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem.Model\\MovieReservationSystem.Model.csproj"
             }
           }
         }
@@ -4359,7 +4364,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -4403,8 +4414,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: microsoft.entityframeworkcore.sqlserver from 9.0.3 to 8.0.3. Reference the package directly from the project to select a different version. \r\n MovieReservationSystem -> MovieReservationSystem.DataAccess -> microsoft.entityframeworkcore.sqlserver (>= 9.0.3) \r\n MovieReservationSystem -> Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.3)",
+      "libraryId": "microsoft.entityframeworkcore.sqlserver",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
