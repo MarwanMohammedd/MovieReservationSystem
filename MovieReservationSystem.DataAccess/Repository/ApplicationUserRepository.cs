@@ -1,4 +1,5 @@
-﻿using MovieReservationSystem.Model.Models;
+﻿using MovieReservationSystem.DataAccess.Data;
+using MovieReservationSystem.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,11 @@ namespace MovieReservationSystem.DataAccess.Repository
 {
     internal class ApplicationUserRepository : IApplicationUserRepository
     {
+        private readonly ApplicationDBContext _applicationDBContext;
+        public ApplicationUserRepository(ApplicationDBContext applicationDBContext)
+        {
+            _applicationDBContext = applicationDBContext;
+        }
         public Task AddAsync(ApplicationUser entity)
         {
             throw new NotImplementedException();
