@@ -1591,7 +1591,7 @@
         "dependencies": {
           "MovieReservationSystem.Model": "1.0.0",
           "microsoft.aspnetcore.identity.entityframeworkcore": "8.0.3",
-          "microsoft.entityframeworkcore.sqlserver": "8.0.3"
+          "microsoft.entityframeworkcore.sqlserver": "9.0.3"
         },
         "compile": {
           "bin/placeholder/MovieReservationSystem.DataAccess.dll": {}
@@ -4417,5 +4417,22 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\ITI - 9M - PWD\\ASP.NET Core MVC\\Project\\MovieReservationSystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: microsoft.entityframeworkcore.sqlserver from 9.0.3 to 8.0.3. Reference the package directly from the project to select a different version. \r\n MovieReservationSystem -> MovieReservationSystem.DataAccess -> microsoft.entityframeworkcore.sqlserver (>= 9.0.3) \r\n MovieReservationSystem -> Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.3)",
+      "libraryId": "microsoft.entityframeworkcore.sqlserver",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

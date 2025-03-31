@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.Model.Models;
 
 namespace MovieReservationSystem.DataAccess.Data{
-    public class ApplicationDBContext : IdentityDbContext
+    public class ApplicationDBContext : IdentityDbContext<ApplicationUser , IdentityRole<int> , int>
     {
         public DbSet<Movie> Movies { get; set; }
         public DbSet<MovieSchedule> MovieSchedules { get; set; }
