@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieReservationSystem.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2b5be628b6d7cfa707f32ead17db5e18ca08c14")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe625724ad8ea48a49b27e38ce11ebbeec78c413")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieReservationSystem.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieReservationSystem.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
