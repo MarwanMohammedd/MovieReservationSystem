@@ -8,4 +8,4 @@ namespace MovieReservationSystem.Model.Models{
         public Theater? Theater { get; set; }
         public Movie? Movie { get; set; }
     }
-}
+}       

@@ -1,0 +1,32 @@
+﻿@using MovieReservationSystem.DTO
+@model TicketBookingDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center mb-4">Creating Tickets</h1>
+<h2 class="text-center text-primary">Total Seats:  @Model.SeatNumbers.Count</h2>
+
+<form method="post" asp-action="SaveCreate" asp-controller="Ticket">
+    <input type="hidden" asp-for="MovieId" />
+    <input type="hidden" asp-for="TheaterId" />
+    <div class="container">
+        <div class="row">
+            @foreach (var seatNumber in Model.SeatNumbers)
+            {
+                <div class="col-md-3 mb-3">
+                    <div class="card shadow-sm text-center">
+                        <div class="card-body">
+                            <h5 class="card-title text-secondary">Seat Number</h5>
+                            <p class="card-text display-6 fw-bold">@seatNumber</p>
+                            <input type="hidden" name="SeatNumbers" value="@seatNumber" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+</form>

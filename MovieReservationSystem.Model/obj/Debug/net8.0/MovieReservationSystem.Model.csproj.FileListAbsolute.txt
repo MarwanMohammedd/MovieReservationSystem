@@ -9,3 +9,31 @@ C:\Users\Marwan Rabie\Desktop\MovieReservationSystem\MovieReservationSystem.Mode
 C:\Users\Marwan Rabie\Desktop\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\refint\MovieReservationSystem.Model.dll
 C:\Users\Marwan Rabie\Desktop\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.pdb
 C:\Users\Marwan Rabie\Desktop\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\ref\MovieReservationSystem.Model.dll
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.deps.json
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.dll
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.pdb
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.AssemblyInfoInputs.cache
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.AssemblyInfo.cs
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.CoreCompileInputs.cache
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.sourcelink.json
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.dll
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\refint\MovieReservationSystem.Model.dll
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.pdb
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\ref\MovieReservationSystem.Model.dll
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.deps.json
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.pdb
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.AssemblyInfoInputs.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.AssemblyInfo.cs
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.CoreCompileInputs.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.sourcelink.json
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\refint\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.pdb
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\ref\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.runtimeconfig.json
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.genruntimeconfig.cache
