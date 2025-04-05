@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.DataAccess.Data;
+using MovieReservationSystem.DataAccess.Repository;
+using MovieReservationSystem.Model;
 using MovieReservationSystem.Model.Models;
+using MovieReservationSystem.Model.ViewModels;
 
 namespace MovieReservationSystem
 {
@@ -19,12 +22,17 @@ namespace MovieReservationSystem
             {
                 options.UseSqlServer(
                     builder.Configuration.GetConnectionString("DataBaseConnectionString"),
-                    b => b.MigrationsAssembly("MovieReservationSystem")
+                    b => b.MigrationsAssembly("MovieReservationSystem.DataAccess")
                 );
             });
 
             builder.Services.AddIdentity<ApplicationUser , IdentityRole<int>>()
             .AddEntityFrameworkStores<ApplicationDBContext>();
+            builder.Services.AddScoped<ReviewsRepository>();
+            builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+            builder.Services.AddScoped<ITicketRepository,TicketRepository>();
+            builder.Services.AddScoped<IMovieRepository,MovieRepository>();
+            builder.Services.AddScoped<TheaterRepository,TheaterRepository>();
 
             var app = builder.Build();
 

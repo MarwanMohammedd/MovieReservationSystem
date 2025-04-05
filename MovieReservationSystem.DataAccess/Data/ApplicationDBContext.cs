@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.Model.Models;
+using System.Xml;
 
 namespace MovieReservationSystem.DataAccess.Data{
     public class ApplicationDBContext : IdentityDbContext<ApplicationUser , IdentityRole<int> , int>
@@ -20,7 +21,7 @@ namespace MovieReservationSystem.DataAccess.Data{
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {   
-            modelBuilder.Entity<MovieSchedule>().HasKey(compsite=> new {compsite.MovieId , compsite.StartTime});
+            modelBuilder.Entity<MovieSchedule>().HasKey(compsite=> new {compsite.MovieId , compsite.Showtime});
             modelBuilder.Entity<Review>().HasKey(compsite=> new {compsite.MovieId , compsite.UserId});
             modelBuilder.Entity<TheatersSchedule>().HasKey(compsite=> new {compsite.MovieId , compsite.TheaterId});
             modelBuilder.Entity<Seat>().HasKey(compsite=> new {compsite.ID , compsite.TheaterID});

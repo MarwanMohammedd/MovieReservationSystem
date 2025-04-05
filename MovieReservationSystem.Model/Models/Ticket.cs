@@ -9,6 +9,7 @@ namespace MovieReservationSystem.Model.Models{
         public int MovieId { get; set; }
         [DataType("money")]
         public double Price { get; set; }
+        public DateTime PurchaseDate { get; set; }
         public ApplicationUser? User { get; set; }
         public Movie? Movie { get; set; }
         public Seat Seat { get; set; } = null!;

@@ -12,9 +12,9 @@ namespace MovieReservationSystem.DataAccess.UnitOfWork
 
         public async void Dispose()
         {
-            await applicationDBContext.DisposeAsync();
-        }
-        public async void Save()
+         //   await applicationDBContext.DisposeAsync();
+        }   
+        public async Task Save()
         {
             await applicationDBContext.SaveChangesAsync();
         }

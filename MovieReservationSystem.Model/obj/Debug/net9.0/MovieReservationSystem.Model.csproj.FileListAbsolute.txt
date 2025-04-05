@@ -1,0 +1,45 @@
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.deps.json
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.runtimeconfig.json
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.pdb
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.AssemblyInfoInputs.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.AssemblyInfo.cs
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.csproj.CoreCompileInputs.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.sourcelink.json
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\refint\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.pdb
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.genruntimeconfig.cache
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net9.0\ref\MovieReservationSystem.Model.dll
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.deps.json
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.runtimeconfig.json
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.dll
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.pdb
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.AssemblyInfoInputs.cache
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.AssemblyInfo.cs
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.csproj.CoreCompileInputs.cache
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.sourcelink.json
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.dll
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\refint\MovieReservationSystem.Model.dll
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.pdb
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.genruntimeconfig.cache
+C:\Users\mhmd5.AHMED_KHALED\Desktop\Project\MovieReservationSystem.Model\obj\Debug\net9.0\ref\MovieReservationSystem.Model.dll
+D:\Project\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.deps.json
+D:\Project\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.runtimeconfig.json
+D:\Project\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.dll
+D:\Project\Project\MovieReservationSystem.Model\bin\Debug\net9.0\MovieReservationSystem.Model.pdb
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.AssemblyInfoInputs.cache
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.AssemblyInfo.cs
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.csproj.CoreCompileInputs.cache
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.sourcelink.json
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.dll
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\refint\MovieReservationSystem.Model.dll
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.pdb
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\MovieReservationSystem.Model.genruntimeconfig.cache
+D:\Project\Project\MovieReservationSystem.Model\obj\Debug\net9.0\ref\MovieReservationSystem.Model.dll

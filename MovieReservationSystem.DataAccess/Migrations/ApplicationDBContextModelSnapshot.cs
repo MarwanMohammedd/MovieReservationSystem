@@ -17,7 +17,7 @@ namespace MovieReservationSystem.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "9.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -263,10 +263,10 @@ namespace MovieReservationSystem.DataAccess.Migrations
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StartTime")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Showtime")
+                        .HasColumnType("datetime2");
 
-                    b.HasKey("MovieId", "StartTime");
+                    b.HasKey("MovieId", "Showtime");
 
                     b.ToTable("MovieSchedules");
                 });
@@ -303,7 +303,11 @@ namespace MovieReservationSystem.DataAccess.Migrations
                     b.Property<bool>("IsReserved")
                         .HasColumnType("bit");
 
-                    b.Property<int>("TicketID")
+                    b.Property<string>("SeatNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TicketID")
                         .HasColumnType("int");
 
                     b.HasKey("ID", "TheaterID");
@@ -311,7 +315,8 @@ namespace MovieReservationSystem.DataAccess.Migrations
                     b.HasIndex("TheaterID");
 
                     b.HasIndex("TicketID")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[TicketID] IS NOT NULL");
 
                     b.ToTable("Seats");
                 });
@@ -364,6 +369,9 @@ namespace MovieReservationSystem.DataAccess.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<DateTime>("PurchaseDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -468,9 +476,7 @@ namespace MovieReservationSystem.DataAccess.Migrations
 
                     b.HasOne("MovieReservationSystem.Model.Models.Ticket", "Ticket")
                         .WithOne("Seat")
-                        .HasForeignKey("MovieReservationSystem.Model.Models.Seat", "TicketID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MovieReservationSystem.Model.Models.Seat", "TicketID");
 
                     b.Navigation("Theater");
 

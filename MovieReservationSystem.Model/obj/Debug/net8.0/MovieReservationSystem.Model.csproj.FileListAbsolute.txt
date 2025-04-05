@@ -35,3 +35,5 @@ D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debu
 D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\refint\MovieReservationSystem.Model.dll
 D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.pdb
 D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\ref\MovieReservationSystem.Model.dll
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.runtimeconfig.json
+D:\ITI - 9M - PWD\ASP.NET Core MVC\Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.genruntimeconfig.cache
