@@ -78,6 +78,6 @@ namespace MovieReservationSystem.DataAccess.Repository.MovieRepository
                 .Where(m => m.ProductionYear <= currentDate)
                 .ToListAsync();
         }
-
+      
     }
 }

@@ -32,5 +32,42 @@ namespace MovieReservationSystem.DataAccess.Repository.TicketRepository
                 .Where(t => t.MovieId == movieId)
                 .ToListAsync();
         }
+        public async Task<IEnumerable<Ticket>> GetExpiredTicketsAsync()
+        {
+            DateTime now = DateTime.Now;
+
+            return await _applicationDBContext.Tickets
+                .Include(t => t.Seat)
+            .Include(t => t.Movie)
+                .Where(t => _applicationDBContext.MovieSchedules
+                                .Any(ms => ms.MovieId == t.MovieId && ms.Showtime < now))
+                .ToListAsync();
+        }
+        public async Task<int> RemoveExpiredTicketsAsync()
+        {
+            IEnumerable<Ticket> expiredTickets = await GetExpiredTicketsAsync();
+
+            foreach (Ticket ticket in expiredTickets)
+            {
+
+                if (ticket.Seat != null)
+                {
+                    ticket.Seat.IsReserved = false;
+                }
+
+              await  Delete(t =>t.ID ==ticket.ID );
+       
+            }
+
+            return await _applicationDBContext.SaveChangesAsync();
+        }
+
+        public async Task<Ticket?> GetByIdAsync(int ticketId)
+        {
+           return await _applicationDBContext.Tickets
+                .Include(t=>t.Seat)
+                .FirstOrDefaultAsync(t => t.ID == ticketId);
+
+        }
     }
 }

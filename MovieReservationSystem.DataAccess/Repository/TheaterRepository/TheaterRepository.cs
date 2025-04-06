@@ -19,6 +19,12 @@ namespace MovieReservationSystem.DataAccess.Repository.TheaterRepository
            _applicationDBContext = applicationDBContext;
         }
 
+        public async Task<Theater?> GetByIdAsync(int theaterId)
+        {
+            return await _applicationDBContext.Theaters
+                .FirstOrDefaultAsync(th => th.ID == theaterId);
+        }
+
         public async Task<Theater?> GetTheaterByMovieId(int movieId, bool includeRelated = true)
         {
             if (includeRelated)

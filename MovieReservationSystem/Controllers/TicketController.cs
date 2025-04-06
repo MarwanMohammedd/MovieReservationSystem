@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using MovieReservationSystem.DataAccess.Repository;
 using MovieReservationSystem.DTO;
+using MovieReservationSystem.Hubs;
 using MovieReservationSystem.Model;
 using MovieReservationSystem.Model.Models;
 
@@ -12,15 +14,17 @@ namespace MovieReservationSystem.Controllers
         private readonly IMovieRepository _movieRepository;
         private readonly ITheaterRepository _theaterRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IHubContext<ReservedTicketHub> _hubContext;
 
         public TicketController(ITicketRepository ticketRepository,IMovieRepository movieRepository
-            , ITheaterRepository theaterRepository,IUnitOfWork unitOfWork)
+            , ITheaterRepository theaterRepository,IUnitOfWork unitOfWork,IHubContext<ReservedTicketHub> hubContext)
         {
             
             _ticketRepository = ticketRepository;
             _movieRepository = movieRepository;
             _theaterRepository = theaterRepository;
             _unitOfWork = unitOfWork;
+            _hubContext = hubContext;
         }
         [HttpGet]
         public IActionResult Index(int id)
@@ -103,7 +107,14 @@ namespace MovieReservationSystem.Controllers
               
                 
             }
-        await    _unitOfWork.Save();
+            
+            await  _unitOfWork.Save();
+
+            // Notify all clients in the movie group
+            await _hubContext.Clients.Group($"movie-{ticketBooking.MovieId}")
+         .SendAsync("SeatReserved", ticketBooking.MovieId, ticketBooking.SeatNumbers);
+
+
             return RedirectToAction("Index", new { id = ticketBooking.MovieId });
         }
 
@@ -120,6 +131,32 @@ namespace MovieReservationSystem.Controllers
         public IActionResult Details()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CancelTicket(int ticketId)
+        {
+            Ticket? ticket = await _ticketRepository.GetByIdAsync(ticketId);
+            if (ticket == null)
+            {
+                return NotFound("Ticket not found.");
+            }
+
+            if (ticket.Seat != null)
+            {
+                ticket.Seat.IsReserved = false;
+            }
+
+
+            await _ticketRepository.Delete(t=> t.ID== ticket.ID);
+
+            await _unitOfWork.Save();
+
+            await _hubContext.Clients.Group($"movie-{ticket.MovieId}")
+                .SendAsync("SeatCanceled", ticket.MovieId, ticket.Seat?.ID);
+
+            return RedirectToAction("Index", new { id = ticket.MovieId });
         }
     }
 }

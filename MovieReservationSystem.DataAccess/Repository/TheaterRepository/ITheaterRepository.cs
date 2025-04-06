@@ -10,6 +10,7 @@ namespace MovieReservationSystem.DataAccess.Repository.TheatorRepository
     public interface ITheaterRepository:IGenericRepository<Theater>
     {
         Task<Theater?> GetTheaterByMovieId(int movieId, bool includeRelated = true);
+        Task<Theater?> GetByIdAsync(int theaterId);
 
     }
 }

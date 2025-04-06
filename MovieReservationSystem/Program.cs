@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.DataAccess.Data;
 using MovieReservationSystem.DataAccess.Repository;
+using MovieReservationSystem.Hubs;
 using MovieReservationSystem.Model;
 using MovieReservationSystem.Model.Models;
 using MovieReservationSystem.Model.ViewModels;
+using MovieReservationSystem.Services;
 
 namespace MovieReservationSystem
 {
@@ -32,8 +34,11 @@ namespace MovieReservationSystem
             builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
             builder.Services.AddScoped<ITicketRepository,TicketRepository>();
             builder.Services.AddScoped<IMovieRepository,MovieRepository>();
-            builder.Services.AddScoped<TheaterRepository,TheaterRepository>();
+            builder.Services.AddScoped<ITheaterRepository,TheaterRepository>();
 
+
+            builder.Services.AddHostedService<TicketCleanupService>();
+            builder.Services.AddSignalR();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -43,6 +48,8 @@ namespace MovieReservationSystem
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.MapHub<ReservedTicketHub>("/reservedTicketHub");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

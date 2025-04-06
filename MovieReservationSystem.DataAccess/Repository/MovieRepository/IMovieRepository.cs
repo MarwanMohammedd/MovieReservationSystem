@@ -12,6 +12,8 @@ namespace MovieReservationSystem.DataAccess.Repository.MovieRepository
         Task<IEnumerable<Movie>> GetAllMoviesAsync(bool includeRelated = true);
         Task<Movie?> GetMovieByIdAsync(int id, bool includeRelated = true);
         Task<Movie?> GetMovieByTitleAsync(string title, bool includeRelated = true);
+ 
+
         //Task AddMovieAsync(Movie movie);
         //Task<bool> UpdateMovieAsync(Movie movie);
         //Task<bool> DeleteMovieAsync(int id);

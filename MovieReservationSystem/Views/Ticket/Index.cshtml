@@ -66,10 +66,53 @@
 </div>
 
 @section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js" integrity="sha512-7SRCYIJtR6F8ocwW7UxW6wGKqbSyqREDbfCORCbGLatU0iugBLwyOXpzhkPyHIFdBO0K2VCu57fvP2Twgx1o2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const movieId = @Model.MovieId;
             let selectedSeats = new Set();
 
+            // Initialize SignalR connection
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/reservedTicketHub")
+                .configureLogging(signalR.LogLevel.Information)
+                .build();
+
+            // Start the connection
+           connection.start().then(
+                function() {
+                console.log("Connection started");
+                connection.invoke("JoinMovieGroup", movieId);
+                })
+                .catch(err => console.error(err.toString()));
+
+
+            // Handle seat reservation updates
+            connection.on("SeatReserved", (updatedMovieId, seatNumbers) => {
+                if (updatedMovieId === movieId) {
+                    seatNumbers.forEach(seatId => {
+                        const seatElement = document.querySelector(`.seat[data-seat-id="${seatId}"]`);
+                        if (seatElement) {
+                            seatElement.classList.remove("btn-success", "btn-warning");
+                            seatElement.classList.add("btn-danger");
+                            seatElement.disabled = true;
+
+                            // Remove from selected seats if it was selected
+                            if (selectedSeats.has(seatId.toString())) {
+                                selectedSeats.delete(seatId.toString());
+                            }
+                        }
+                    });
+                }
+            });
+             connection.on("SeatCanceled", function (movieId, seatId) {
+          
+            const seat = document.getElementById(`seat-${seatId}`);
+            if (seat) {
+                seat.classList.remove("reserved");
+                seat.classList.add("available");
+            }
+        });
             document.querySelectorAll(".seat").forEach(button => {
                 button.addEventListener("click", function () {
                     const seatId = this.getAttribute("data-seat-id");
@@ -88,7 +131,7 @@
 
             document.getElementById("seatForm").addEventListener("submit", function (event) {
                 if (selectedSeats.size === 0) {
-                    event.preventDefault(); // Stop form submission
+                    event.preventDefault();
                     alert("Please select at least one seat.");
                     return;
                 }
