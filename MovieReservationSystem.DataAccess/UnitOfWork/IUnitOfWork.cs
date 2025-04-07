@@ -7,6 +7,7 @@ namespace MovieReservationSystem.DataAccess.UnitOfWork
         IMovieRepository Movie { get; }
         IMovieSchedleRepository MovieSchedle { get; }
         IReviewRepository Review { get; }
+        
         Task Save();
     }
 }

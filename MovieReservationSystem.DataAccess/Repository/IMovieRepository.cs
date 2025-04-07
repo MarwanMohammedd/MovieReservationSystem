@@ -8,6 +8,7 @@ using MovieReservationSystem.Model.Models;
 
 namespace MovieReservationSystem.DataAccess.Repository
 {
+    
     public interface IMovieRepository :IGenericRepository<Movie>
     {
         //public Task<IEnumerable<Movie>> MoviePagenation(int page ,int size);

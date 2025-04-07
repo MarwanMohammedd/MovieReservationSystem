@@ -10,6 +10,7 @@ namespace MovieReservationSystem.DataAccess.Repository
     public interface IReviewRepository :IGenericRepository<Review>
     {
       
+      
     
     }
 }

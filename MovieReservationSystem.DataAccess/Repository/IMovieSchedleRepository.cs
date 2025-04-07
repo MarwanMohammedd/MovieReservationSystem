@@ -9,5 +9,6 @@ namespace MovieReservationSystem.DataAccess.Repository
 {
     public interface IMovieSchedleRepository :IGenericRepository<MovieSchedule>
     {
+        
     }
 }

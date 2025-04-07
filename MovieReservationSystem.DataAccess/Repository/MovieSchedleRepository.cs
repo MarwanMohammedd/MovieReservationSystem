@@ -10,6 +10,7 @@ namespace MovieReservationSystem.DataAccess.Repository
 {
     public class MovieSchedleRepository : GenericRepository<MovieSchedule>, IMovieSchedleRepository
     {
+        
         private readonly ApplicationDBContext applicationDBContext;
 
         public MovieSchedleRepository(ApplicationDBContext applicationDBContext) : base(applicationDBContext)

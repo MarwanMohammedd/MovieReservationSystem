@@ -20,6 +20,7 @@ namespace MovieReservationSystem.DataAccess.Data{
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {   
+            
            // modelBuilder.Entity<MovieSchedule>().HasKey(compsite=> new {compsite.MovieId , compsite.StartTime});
             modelBuilder.Entity<Review>().HasKey(compsite=> new {compsite.MovieId , compsite.UserId});
             modelBuilder.Entity<TheatersSchedule>().HasKey(compsite=> new {compsite.MovieId , compsite.TheaterId});

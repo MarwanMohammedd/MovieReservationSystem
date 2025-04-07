@@ -62,6 +62,7 @@ namespace MovieReservationSystem.DataAccess.Repository
         /// </summary>
         /// <param name="Selector">Name Of Navigation Property</param>
         /// <returns>Task<IEnumerable<TEntity>></returns>
+        /// 
         public async Task<IEnumerable<TEntity>> ReadAllAsync(string? Selector = null)
         {
             if (Selector is not null)

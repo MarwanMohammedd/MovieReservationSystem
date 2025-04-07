@@ -10,6 +10,7 @@ namespace MovieReservationSystem.DataAccess.Repository
 {
     public class ReviewRepository:GenericRepository<Review>, IReviewRepository
     {
+        
         private readonly ApplicationDBContext applicationDBContext;
 
         public ReviewRepository(ApplicationDBContext applicationDBContext) : base(applicationDBContext)

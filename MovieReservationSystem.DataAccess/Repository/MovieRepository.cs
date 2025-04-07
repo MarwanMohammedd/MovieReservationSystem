@@ -13,6 +13,7 @@ namespace MovieReservationSystem.DataAccess.Repository
 {
     public class MovieRepository : GenericRepository<Movie>, IMovieRepository
     {
+        
         private readonly ApplicationDBContext applicationDBContext;
 
         public MovieRepository(ApplicationDBContext applicationDBContext) : base(applicationDBContext)

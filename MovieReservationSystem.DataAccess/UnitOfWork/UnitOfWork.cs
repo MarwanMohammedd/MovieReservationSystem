@@ -15,6 +15,7 @@ namespace MovieReservationSystem.DataAccess.UnitOfWork
         {
             this.applicationDBContext = applicationDBContext;
             Movie = movieRepository;
+            
             MovieSchedle = movieSchedleRepository;
             Review = review;
         }
