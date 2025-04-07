@@ -12,5 +12,6 @@ namespace MovieReservationSystem.Model.Models{
         public ApplicationUser? User { get; set; }
         public Movie? Movie { get; set; }
         public Seat Seat { get; set; } = null!;
+        
     }
 }

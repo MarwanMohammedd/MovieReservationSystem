@@ -9,6 +9,7 @@ namespace MovieReservationSystem.Model.Models{
         public int MovieId { get; set; }
         public string? Commnet { get; set; }
         public int Rate { get; set; } = 0;
+        
 
         public Movie? Movie { get; set; }
         public ApplicationUser? User { get; set; }

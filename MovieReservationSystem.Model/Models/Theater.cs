@@ -5,5 +5,6 @@ namespace MovieReservationSystem.Model.Models{
         public int SeatsCount { get; set; }
         public IEnumerable<TheatersSchedule>? TheatersSchedules { get; set; }
         public IEnumerable<Seat>? Seats { get; set; }
+        
     }
 }

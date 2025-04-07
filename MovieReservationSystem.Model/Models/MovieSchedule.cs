@@ -6,6 +6,7 @@ namespace MovieReservationSystem.Model.Models{
     {
         public int MovieId { get; set; }
         public DateTime StartTime { get; set; }
+        
         public Movie? Movie { get; set; }
     }
 }

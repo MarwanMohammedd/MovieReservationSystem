@@ -5,6 +5,7 @@ namespace MovieReservationSystem.Model.Models{
     {
         public String FirstName { get; set; } = null!;
         public String LastName { get; set; } = null!;
+        
         public IEnumerable<Review>? Reviews { get; set; }
         public IEnumerable<Ticket>? Tickets { get; set; }
     }
