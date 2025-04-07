@@ -6,30 +6,17 @@ namespace MovieReservationSystem.DataAccess.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDBContext applicationDBContext;
-        public IMovieRepository Movie { get; }
-
-        public IMovieSchedleRepository MovieSchedle { get; }
-        public IReviewRepository Review { get; }
-
-        public UnitOfWork(ApplicationDBContext applicationDBContext, IMovieRepository movieRepository, IMovieSchedleRepository movieSchedleRepository, IReviewRepository review)
-        {
-            this.applicationDBContext = applicationDBContext;
-            Movie = movieRepository;
-            MovieSchedle = movieSchedleRepository;
-            Review = review;
+        public UnitOfWork(ApplicationDBContext applicationDBContext){
+            this.applicationDBContext=applicationDBContext;
         }
-
 
         public async void Dispose()
         {
             await applicationDBContext.DisposeAsync();
         }
-        public async Task Save()
+        public async void Save()
         {
             await applicationDBContext.SaveChangesAsync();
         }
-
-      
-
     }
 }

@@ -183,14 +183,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[14.0.0, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[8.0.7, )"
-            },
             "microsoft.aspnetcore.identity.entityframeworkcore": {
               "target": "Package",
               "version": "[8.0.3, )"

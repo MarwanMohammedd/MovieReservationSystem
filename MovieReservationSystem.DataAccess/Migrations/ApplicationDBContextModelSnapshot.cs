@@ -177,11 +177,7 @@ namespace MovieReservationSystem.DataAccess.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -243,18 +239,10 @@ namespace MovieReservationSystem.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Director")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
                     b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -272,22 +260,13 @@ namespace MovieReservationSystem.DataAccess.Migrations
 
             modelBuilder.Entity("MovieReservationSystem.Model.Models.MovieSchedule", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("StartTime")
+                        .HasColumnType("int");
 
-                    b.HasKey("ID");
-
-                    b.HasIndex("MovieId", "StartTime")
-                        .IsUnique();
+                    b.HasKey("MovieId", "StartTime");
 
                     b.ToTable("MovieSchedules");
                 });

@@ -1,11 +1,9 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace MovieReservationSystem.Model.Models{
    
-    public class MovieSchedule :BaseEnitiy
+    public class MovieSchedule
     {
         public int MovieId { get; set; }
-        public DateTime StartTime { get; set; }
+        public int StartTime { get; set; }
         public Movie? Movie { get; set; }
     }
 }
