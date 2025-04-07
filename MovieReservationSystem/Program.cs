@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.DataAccess.Data;
+using MovieReservationSystem.DataAccess.Repository;
+using MovieReservationSystem.DataAccess.UnitOfWork;
+using MovieReservationSystem.Hubs;
 using MovieReservationSystem.Model.Models;
 
 namespace MovieReservationSystem
@@ -20,9 +23,21 @@ namespace MovieReservationSystem
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseConnectionString"));
                 }
             );
+            builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+            builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+            builder.Services.AddScoped<IMovieSchedleRepository, MovieSchedleRepository>();
+            builder.Services.AddScoped<IReviewRepository,ReviewRepository>();
+            builder.Services.AddSignalR();
 
-            builder.Services.AddIdentity<ApplicationUser , IdentityRole<int>>()
+            builder.Services.AddAutoMapper(typeof(Program));
+
+
+
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>()
             .AddEntityFrameworkStores<ApplicationDBContext>();
+
+           
+
 
             var app = builder.Build();
 
@@ -39,11 +54,13 @@ namespace MovieReservationSystem
 
             app.UseRouting();
 
+            app.UseAuthentication(); 
             app.UseAuthorization();
+            app.MapHub<CommentHub>("/commentHub");
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Movie}/{action=ShowAll}");
 
             app.Run();
 

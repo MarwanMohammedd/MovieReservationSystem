@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Review>
+<link rel="stylesheet" type="text/css" href="~/css/addcomment.css" />
+
+@if (Model.Count() != 0)
+{
+    <div class="existing-comments">
+        <h2 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px;">User Reviews</h2>
+        <div class="comments-scroll-wrapper" id="con">
+            @foreach (var item in Model)
+            {
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <span class="comment-author">@item.User.FirstName @item.User.LastName</span>
+                    </div>
+                    <div class="comment-rating">
+                        <span class="stars">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= @item.Rate)
+                                {
+                                    <span class="stars">★</span>
+                                }
+                                else
+                                {
+                                    <span class="stars">☆</span>
+                                }
+                            }
+
+                        </span>
+                        <span class="rating-value">@item.Rate / 5.0</span>
+                    </div>
+                    <div class="comment-content">
+                        @item.Commnet
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+}
+else
+{
+    <h1>eeeeeeeeee</h1>
+}
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"
+        integrity="sha512-7SRCYIJtR6F8ocwW7UxW6wGKqbSyqREDbfCORCbGLatU0iugBLwyOXpzhkPyHIFdBO0K2VCu57fvP2Twgx1o2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+
+      connectionHub = new signalR.HubConnectionBuilder().withUrl("/commentHub").build();
+
+    connectionHub
+        .start()
+        .then(() => { console.log("Connection Success") })
+        .catch(() => { alert("Connection Failed") });
+
+
+    connectionHub.on("ReceiveComment", function (commentData) {
+                       console.log("yRescve");
+
+        // Build the HTML dynamically
+        var commentHtml = `
+            <div class="comment-item">
+                <div class="comment-header">
+                    <span class="comment-author">${commentData.UserName}</span>
+                </div>
+                <div class="comment-rating">
+                    <span class="stars">`;
+
+        for (var i = 1; i <= 5; i++) {
+            if (i <= commentData.Rate) {
+                commentHtml += `<span class="stars">★</span>`;
+            } else {
+                commentHtml += `<span class="stars">☆</span>`;
+            }
+        }
+
+        commentHtml += `</span>
+                        <span class="rating-value">${commentData.Rate} / 5.0</span>
+                    </div>
+                    <div class="comment-content">
+                        ${commentData.Comment}
+                    </div>
+                </div>`;
+
+        $("#con").append(commentHtml);
+    });
+</script>

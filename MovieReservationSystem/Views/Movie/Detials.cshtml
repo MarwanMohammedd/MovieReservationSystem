@@ -1,0 +1,59 @@
+﻿@model Movie
+@{
+    Layout = "_DashboardLayout";
+}
+
+<h1>Movie Details</h1>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h3>@Model.Title</h3> 
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <strong>Genre:</strong>
+                    <p>@Model.Genre</p>
+                </div>
+
+                <div class="form-group">
+                    <strong>Description:</strong>
+                    <p>@Model.Description</p>
+                </div>
+
+                <div class="form-group">
+                    <strong>Director:</strong>
+                    <p>@Model.Director</p>
+                </div>
+
+                <div class="form-group">
+                    <strong>Production Year:</strong>
+                    <p>@Model.ProductionYear</p>
+                </div>
+
+                <div class="form-group">
+                    <strong>Duration:</strong>
+                    <p>@Model.Duration minutes</p>
+                </div>
+
+                <div class="form-group">
+                    <strong>Image:</strong>
+                    @if (!string.IsNullOrEmpty(Model.ImagePath))
+                    {
+                        <div class="mt-2">
+                            <img src="~/Images/@Model.ImagePath" alt="Movie Image" class="img-fluid" />
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No image available.</p>
+                    }
+                </div>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

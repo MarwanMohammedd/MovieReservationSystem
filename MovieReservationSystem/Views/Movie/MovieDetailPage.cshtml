@@ -1,0 +1,133 @@
+﻿@model MovieDetailPageVM
+
+
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="breadcrumb-area-content">
+					<h1>Movie Detalied Page</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- breadcrumb area end -->
+<!-- transformers area start -->
+<section class="transformers-area mt-5">
+	<div class="container">
+		<div class="transformers-box">
+			<div class="row flexbox-center">
+				<div class="col-lg-5 text-lg-left text-center">
+					<div class="transformers-content">
+						<img src="~/Images/@Model.ImagePath" alt="about" />
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="transformers-content">
+						<h2>@Model.Title</h2>
+						<p>@Model.Genre</p>
+						<ul>
+							<li>
+								<div class="transformers-left">
+									Movie:
+								</div>
+								<div class="transformers-right">
+									<a href="#">@Model.Genre</a>
+								</div>
+							</li>
+
+							<li>
+								<div class="transformers-left">
+									Director:
+								</div>
+								<div class="transformers-right">
+									@Model.Director
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Time:
+								</div>
+								<div class="transformers-right">
+									@Model.Duration
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Release:
+								</div>
+								<div class="transformers-right">
+									@Model.ProductionYear
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Language:
+								</div>
+								<div class="transformers-right">
+									English
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Cinema:
+								</div>
+								<div class="transformers-right">
+									HB Movies  |  HW Town <p class="theme-btn">Movies House</p>Grand Seats  |  HB Max
+									<div class="transformers-bottom">
+										@foreach (var item in Model.MovieScheduleList)
+										{
+											<p>@item.ToString("yyyy-MM-dd") <span>@item.ToString("HH:mm")</span></p>
+
+										}
+
+
+									</div>
+
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Share:
+								</div>
+								<div class="transformers-right">
+									<a href="#"><i class="icofont icofont-social-facebook"></i></a>
+									<a href="#"><i class="icofont icofont-social-twitter"></i></a>
+									<a href="#"><i class="icofont icofont-social-google-plus"></i></a>
+									<a href="#"><i class="icofont icofont-youtube-play"></i></a>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="theme-btn"><i class="icofont icofont-ticket"></i> BUY TICKET</a>
+		</div>
+	</div>
+</section>
+
+<section class="details-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">
+				<!-- عرض وصف المحتوى -->
+				<div class="details-content">
+					<div class="details-overview">
+						<h2>Overview</h2>
+						<p>@Model.Description</p>
+					</div>
+
+					<partial name="_AddCommentPartial" model=" new ReviewViewModel{
+                                         MovieId=Model.ID,
+                                       MovieReviews=Model.reviews
+									} " />
+
+					@* <partial name="DisplayComment"  model="@Model.reviews "/> *@
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

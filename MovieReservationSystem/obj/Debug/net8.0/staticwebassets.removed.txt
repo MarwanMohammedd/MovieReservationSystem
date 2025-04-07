@@ -1,0 +1,2 @@
+D:\ITI\MVC_Project\MovieReservationSystem\wwwroot\assets\1.mp4
+D:\ITI\MVC_Project\MovieReservationSystem\wwwroot\assets\2.mp4
