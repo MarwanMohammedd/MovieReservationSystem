@@ -3,7 +3,10 @@ using MovieReservationSystem.DataAccess.Repository;
 namespace MovieReservationSystem.DataAccess.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
-    {   
-        void Save();
+    {
+        IMovieRepository Movie { get; }
+        IMovieSchedleRepository MovieSchedle { get; }
+        IReviewRepository Review { get; }
+        Task Save();
     }
 }
