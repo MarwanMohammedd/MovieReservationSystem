@@ -9,6 +9,7 @@ namespace MovieReservationSystem.Services
     {
 
         public MappingProfile() {
+            
 
             CreateMap<Movie, MovieViewModel>().ReverseMap();
             CreateMap<MovieSchedule, MovieScheduleVM>()

@@ -153,6 +153,7 @@ namespace MovieReservationSystem.Controllers
         }
 
         [HttpGet]
+        
         public IActionResult AccessDenied()
         {
             return View();

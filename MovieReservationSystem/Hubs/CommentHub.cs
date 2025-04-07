@@ -13,6 +13,7 @@ namespace MovieReservationSystem.Hubs
 {
     public class CommentHub : Hub
     {
+        
         //private readonly IUnitOfWork unitOfWork;
         //private readonly UserManager<ApplicationUser> userManager;
         //private readonly ApplicationDBContext context;

@@ -9,6 +9,7 @@ namespace MovieReservationSystem.ViewModels
         //[MinLength(6, ErrorMessage = "Must More Than 6 Charachters")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; } = null!;
+        
 
         [Required(ErrorMessage = "Last Name Is Required")]
        // [MinLength(6, ErrorMessage = "Must More Than 6 Charachters")]

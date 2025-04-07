@@ -12,6 +12,7 @@ namespace MovieReservationSystem.Controllers
 {
     public class ReviewController : Controller
     {
+        
 
         private readonly IUnitOfWork unitOfWork;
         private readonly UserManager<ApplicationUser> userManager;

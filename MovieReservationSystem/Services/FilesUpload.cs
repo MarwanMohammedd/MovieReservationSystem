@@ -8,6 +8,7 @@ namespace MovieReservationSystem.Services
     {
         public static async Task<string> UploadImage(IWebHostEnvironment host,IFormFile ImageFile)
         {
+            
             var path = Path.Combine(host.WebRootPath, "Images");
             var filePath = Path.Combine(path,ImageFile.FileName);
             using (FileStream fs = new FileStream(filePath, FileMode.Create))

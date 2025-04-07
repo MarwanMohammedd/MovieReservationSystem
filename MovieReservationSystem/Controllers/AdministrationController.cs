@@ -145,6 +145,7 @@ namespace MovieReservationSystem.Controllers
         }
 
         [HttpGet]
+        
         public async Task<IActionResult> RemoveUsersInRoles()
         {
             UserRoleViewModel userRoleViewModel = new(){

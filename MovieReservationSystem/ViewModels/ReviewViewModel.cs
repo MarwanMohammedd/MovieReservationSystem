@@ -6,6 +6,7 @@ namespace MovieReservationSystem.ViewModels
     {
         public int? UserId { get; set; }
         public int MovieId { get; set; }
+        
         public string? Comment { get; set; } = string.Empty;
         public int Rate { get; set; } = 0;
 

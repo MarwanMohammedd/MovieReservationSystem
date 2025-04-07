@@ -13,6 +13,7 @@ namespace MovieReservationSystem.ViewModels
         [Display(Name = "Password")]
         public string Password { get; set; } = null!;
         public bool RememberMe { get; set; }
+        
 
     }
 }

@@ -7,6 +7,7 @@ namespace MovieReservationSystem.ViewModels
     {   
         [Required]
         [Display(Name ="Role Name")]
+        
         public string RoleName { get; set; } = null!;
 
         public IEnumerable<IdentityRole<int>>? Roles { get; set; }

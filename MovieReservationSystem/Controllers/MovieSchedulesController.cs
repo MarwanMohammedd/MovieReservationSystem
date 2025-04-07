@@ -9,6 +9,7 @@ namespace MovieReservationSystem.Controllers
 {
     public class MovieSchedulesController : Controller
     {
+        
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 

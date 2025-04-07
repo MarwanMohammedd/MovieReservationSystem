@@ -64,6 +64,7 @@ namespace MovieReservationSystem.Controllers
 
 
         [HttpGet]
+        
         public async Task<IActionResult> Index()
         {
 

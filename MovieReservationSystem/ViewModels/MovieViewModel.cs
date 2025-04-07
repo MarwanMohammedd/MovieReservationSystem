@@ -7,6 +7,7 @@ namespace MovieReservationSystem.ViewModels
         public int ID { get; set; } = 0;
         public string Title { get; set; } = string.Empty;
         public IFormFile? ImageFile { get; set; }
+        
         public string Genre { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Director { get; set; } = string.Empty;

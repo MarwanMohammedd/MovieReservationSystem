@@ -10,6 +10,7 @@ namespace MovieReservationSystem.ViewModels
         public string Description { get; set; } = null!;
         public DateOnly ProductionYear { get; set; }
         public int Duration { get; set; }
+        
         public string ImagePath { get; set; } = string.Empty;
         public string Director { get; set; } = string.Empty;
         public IEnumerable<DateTime>? MovieScheduleList { get; set; }

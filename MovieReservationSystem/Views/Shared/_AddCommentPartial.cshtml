@@ -8,6 +8,7 @@
     bool canDelete = false;
     if (User.Identity.IsAuthenticated)
     {
+        
         userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
         canDelete = User.Identity.IsAuthenticated &&
                               (User.IsInRole("Admin") || userId == Model.UserId);
