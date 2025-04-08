@@ -3,40 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <!-- إضافة Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Movie System</title>
+    <link rel="stylesheet" href="~/css/DashBoard/site.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    @RenderSection("Styles", required: false)
 </head>
 <body>
-    
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">My Website</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" asp-action="index" asp-controller="Movie">Movie</a>
+                        <a class="nav-link" asp-action="Index" asp-controller="Movie">
+                            <i class="fas fa-ticket-alt me-1"></i> Movies
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="index" asp-controller="MovieSchedules">MovieSchedulesbout</a>
+                        <a class="nav-link" asp-action="Index" asp-controller="MovieSchedules">
+                            <i class="fas fa-calendar-alt me-1"></i> Schedules
+                        </a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Administration">
+                            <i class="fas fa-calendar-alt me-1"></i> Administrations
+                        </a>
+                    </li>
+                   
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Content section where the body will be rendered -->
-    <div class="container mt-4">
-        @RenderBody()
+    <div class="container">
+        <main role="main" class="main-content">
+            @RenderBody()
+        </main>
     </div>
 
-@RenderSection("Scripts", required: false)
-</body>
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; @DateTime.Now.Year - Movie Reservation System. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <!-- Bootstrap & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    @RenderSection("Scripts", required: false)
+</body>
 </html>

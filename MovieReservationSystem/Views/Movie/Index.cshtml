@@ -2,43 +2,60 @@
 @model IEnumerable<Movie>
 @{
     Layout = "_DashboardLayout";
+    ViewData["Title"] = "Movies List";
 }
 
-<h2>Movies List</h2>
+<link rel="stylesheet" href="~/css/movieListIndex.css">
+<div class="movies-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="page-title">Movies List</h2>
+        <a asp-action="Add" class="btn btn-primary add-btn">
+            <i class="fas fa-plus"></i> Add New Movie
+        </a>
+    </div>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Genre</th>
-            <th>Director</th>
-            <th>Production Year</th>
-            
-            <th>Duration (min)</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var movie in Model)
-        {
-            <tr>
-                <td>
-                    <img src="~/Images/@movie.ImagePath" alt="Movie Image" width="100" height="150" class="img-thumbnail" />
-                </td>
-                <td>@movie.Title</td>
-                <td>@movie.Genre</td>
-                <td>@movie.Director</td>
-                <td>@movie.ProductionYear</td>
-                <td>@movie.Duration</td>
-                <td>
-                    <a asp-action="Detials" asp-route-id="@movie.ID" class="btn btn-info">Details</a>
-                    <a asp-action="Update" asp-route-id="@movie.ID" class="btn btn-warning">Update</a>
-                    <a asp-action="Delete" asp-route-id="@movie.ID" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="table-responsive">
+        <table class="table movies-table">
+            <thead class="table-header">
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Director</th>
+                    <th>Year</th>
+                    <th>Duration</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model)
+                {
+                    <tr class="movie-row">
+                        <td class="movie-image">
+                            <img src="~/Images/@movie.ImagePath" alt="@movie.Title" class="img-thumbnail" />
+                        </td>
+                        <td class="movie-title">@movie.Title</td>
+                        <td class="movie-genre">@movie.Genre</td>
+                        <td class="movie-director">@movie.Director</td>
+                        <td class="movie-year">@movie.ProductionYear</td>
+                        <td class="movie-duration">@movie.Duration min</td>
+                        <td class="movie-actions">
+                            <a asp-action="Details" asp-route-id="@movie.ID" class="btn btn-info action-btn">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                            <a asp-action="Update" asp-route-id="@movie.ID" class="btn btn-warning action-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@movie.ID" class="btn btn-danger action-btn">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<a asp-action="Add" class="btn btn-primary">Add New Movie</a>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

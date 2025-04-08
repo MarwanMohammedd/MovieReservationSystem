@@ -17,27 +17,29 @@ namespace MovieReservationSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            
+
             builder.Services.AddDbContext<ApplicationDBContext>(
-                options=>{
+                options =>
+                {
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseConnectionString"));
                 }
             );
-            builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
             builder.Services.AddScoped<IMovieSchedleRepository, MovieSchedleRepository>();
-            builder.Services.AddScoped<IReviewRepository,ReviewRepository>();
+            builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
             builder.Services.AddSignalR();
 
             builder.Services.AddAutoMapper(typeof(Program));
 
 
-
-            builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>()
+            builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDBContext>();
 
-           
+            builder.Services.ConfigureApplicationCookie(option => { });
 
+            builder.Services.AddAuthentication().AddGoogle(options =>{});
 
             var app = builder.Build();
 
@@ -54,7 +56,7 @@ namespace MovieReservationSystem
 
             app.UseRouting();
 
-            app.UseAuthentication(); 
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapHub<CommentHub>("/commentHub");
 

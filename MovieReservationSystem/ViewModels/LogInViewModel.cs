@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authentication;
 
 namespace MovieReservationSystem.ViewModels
 {
@@ -13,7 +14,9 @@ namespace MovieReservationSystem.ViewModels
         [Display(Name = "Password")]
         public string Password { get; set; } = null!;
         public bool RememberMe { get; set; }
-        
 
+        public string? ReturnUrl { get; set; }
+        
+        public IList<AuthenticationScheme>? ExternalLogins { get; set; }
     }
 }

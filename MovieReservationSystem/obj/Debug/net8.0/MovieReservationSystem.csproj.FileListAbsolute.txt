@@ -675,3 +675,4 @@ D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem\bin\De
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

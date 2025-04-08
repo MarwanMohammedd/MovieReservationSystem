@@ -7,13 +7,13 @@ using MovieReservationSystem.ViewModels;
 
 namespace MovieReservationSystem.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
-        private readonly RoleManager<IdentityRole<int>> roleManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public AdministrationController(RoleManager<IdentityRole<int>> roleManager, UserManager<ApplicationUser> userManager)
+        public AdministrationController(RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager)
         {
             this.roleManager = roleManager;
             this.userManager = userManager;
@@ -51,7 +51,7 @@ namespace MovieReservationSystem.Controllers
             }
             else
             {
-                IdentityRole<int> identityRole = new()
+                ApplicationRole identityRole = new()
                 {
                     Name = rolesViewModel.RoleName,
                 };
@@ -72,49 +72,33 @@ namespace MovieReservationSystem.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteRole()
+        public async Task<IActionResult> DeleteRole(string roleName)
         {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteRole(RolesViewModel rolesViewModel)
-        {
-            IdentityRole<int>? exists = await roleManager.FindByNameAsync(rolesViewModel.RoleName);
-            if (exists is null)
+            ApplicationRole? exists = await roleManager.FindByNameAsync(roleName);
+            if (exists is not null)
             {
-                IdentityRole<int> identityRole = new()
-                {
-                    Name = rolesViewModel.RoleName
-                };
-                IdentityResult result = await roleManager.DeleteAsync(identityRole);
+                IdentityResult result = await roleManager.DeleteAsync(exists);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    foreach (IdentityError error in result.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
+                    return RedirectToAction(nameof(Index));
                 }
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "This Role Is Already Not Exist");
             }
-            return View(rolesViewModel);
+            return RedirectToAction(nameof(Index));
         }
+
 
         [HttpGet]
         public async Task<IActionResult> AddUsersInRoles()
         {
-            UserRoleViewModel userRoleViewModel = new(){
+            UserRoleViewModel userRoleViewModel = new()
+            {
                 RoleName = string.Empty,
-                UserEmail =string.Empty ,
-                AvailableRoles = await roleManager.Roles.Select(element=>element.Name).ToListAsync(),
+                UserEmail = string.Empty,
+                AvailableRoles = await roleManager.Roles.Select(element => element.Name).ToListAsync(),
             };
             return View(userRoleViewModel);
         }
@@ -124,13 +108,13 @@ namespace MovieReservationSystem.Controllers
         public async Task<IActionResult> AddUsersInRoles(UserRoleViewModel userRoleViewModel)
         {
             ApplicationUser? user = await userManager.FindByEmailAsync(userRoleViewModel.UserEmail);
-            IdentityRole<int>? role = await roleManager.FindByNameAsync(userRoleViewModel.RoleName);
+            ApplicationRole? role = await roleManager.FindByNameAsync(userRoleViewModel.RoleName);
             if (user is not null && role is not null)
             {
                 IdentityResult result = await userManager.AddToRoleAsync(user, userRoleViewModel.RoleName);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("", "");
+                    return RedirectToAction(nameof(Index));
                 }
                 else
                 {
@@ -141,17 +125,17 @@ namespace MovieReservationSystem.Controllers
             {
                 ModelState.AddModelError(string.Empty, "");
             }
-            return View("ManageUserRoles",userRoleViewModel);
+            return View();
         }
 
         [HttpGet]
-        
         public async Task<IActionResult> RemoveUsersInRoles()
         {
-            UserRoleViewModel userRoleViewModel = new(){
-                AvailableRoles = await roleManager.Roles.Select(element=>element.Name).ToListAsync()
+            UserRoleViewModel userRoleViewModel = new()
+            {
+                AvailableRoles = await roleManager.Roles.Select(element => element.Name).ToListAsync()
             };
-            return View("ManageUserRoles",userRoleViewModel);
+            return View(userRoleViewModel);
         }
 
         [HttpPost]
@@ -159,7 +143,7 @@ namespace MovieReservationSystem.Controllers
         public async Task<IActionResult> RemoveUsersInRolesAsync(UserRoleViewModel userRoleViewModel)
         {
             ApplicationUser? user = await userManager.FindByEmailAsync(userRoleViewModel.UserEmail);
-            IdentityRole<int>? role = await roleManager.FindByNameAsync(userRoleViewModel.RoleName);
+            ApplicationRole? role = await roleManager.FindByNameAsync(userRoleViewModel.RoleName);
             if (user is not null && role is not null)
             {
                 IdentityResult result = await userManager.RemoveFromRoleAsync(user, userRoleViewModel.RoleName);
@@ -176,8 +160,27 @@ namespace MovieReservationSystem.Controllers
             {
                 ModelState.AddModelError(string.Empty, "");
             }
-            return View("ManageUserRoles",userRoleViewModel);
+            return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ReadUsersRole()
+        {
+            var users = await userManager.Users.ToListAsync();
+            var userRolesViewModel = new List<UserRoleViewModel>();
+
+            foreach (var user in users)
+            {
+                var roles = await userManager.GetRolesAsync(user);
+                userRolesViewModel.Add(new UserRoleViewModel
+                {
+                    UserId = user.Id,
+                    UserEmail = user.Email!,
+                    AvailableRoles = roles.ToList()
+                });
+            }
+
+            return View(userRolesViewModel);
+        }
     }
 }

@@ -1,72 +1,81 @@
 ﻿@model MovieViewModel
 @{
     Layout = "_DashboardLayout";
+    ViewData["Title"] = "Add New Movie";
 }
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow-lg">
-                <div class="card-header bg-primary text-white text-center">
-                    <h3>Add New Movie</h3>
-                    
+<link rel="stylesheet" href="~/css/Movie/Add.css">
+
+<div class="movie-form-container">
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h2>Add New Movie</h2>
+        </div>
+        
+        <form asp-action="Add" method="post" enctype="multipart/form-data" class="movie-form">
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" placeholder="Enter movie title" />
+                <span asp-validation-for="Title" class="validation-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Genre" class="form-label"></label>
+                <input asp-for="Genre" class="form-control" placeholder="Enter movie genre" />
+                <span asp-validation-for="Genre" class="validation-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter movie description"></textarea>
+                <span asp-validation-for="Description" class="validation-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Director" class="form-label"></label>
+                <input asp-for="Director" class="form-control" placeholder="Enter director name" />
+                <span asp-validation-for="Director" class="validation-message"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ProductionYear" class="form-label"></label>
+                        <input asp-for="ProductionYear" type="date" class="form-control" />
+                        <span asp-validation-for="ProductionYear" class="validation-message"></span>
+                    </div>
                 </div>
-                <div class="card-body">
-
-                    <form asp-action="Add" method="post" enctype="multipart/form-data">
-                        <div asp-validation-summary="All" ></div>
-
-                        <div class="mb-3">
-                            <label asp-for="Title" class="form-label fw-bold"></label>
-                            <input asp-for="Title" class="form-control" placeholder="Enter movie title" />
-                            <span asp-validation-for="Title" class="text-danger"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Genre" class="form-label fw-bold"></label>
-                            <input asp-for="Genre" class="form-control" placeholder="Enter movie genre" />
-                            <span asp-validation-for="Genre" class="text-danger"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Description" class="form-label fw-bold"></label>
-                            <textarea asp-for="Description" class="form-control" rows="3" placeholder="Enter movie description"></textarea>
-                            <span asp-validation-for="Description" class="text-danger"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Director" class="form-label fw-bold"></label>
-                            <input asp-for="Director" class="form-control" placeholder="Enter director name" />
-                            <span asp-validation-for="Director" class="text-danger"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="ProductionYear" class="form-label fw-bold">Production Year</label>
-                            <input asp-for="ProductionYear" type="date" class="form-control" />
-                            <span asp-validation-for="ProductionYear" class="text-danger"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Duration" class="form-label fw-bold"></label>
-                            <input asp-for="Duration" type="number" class="form-control" placeholder="Enter duration in minutes" />
-                            <span asp-validation-for="Duration" class="text-danger"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="ImageFile" class="form-label fw-bold"></label>
-                            <input class="form-control" asp-for="ImageFile" type="file" />
-                            <span asp-validation-for="ImageFile" class="text-danger"></span>
-                        </div>
-
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-success btn-lg">
-                                <i class="fas fa-plus-circle"></i> Create Movie
-                            </button>
-                            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-                        </div>
-                    </form>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Duration" class="form-label"></label>
+                        <input asp-for="Duration" type="number" class="form-control" placeholder="Duration in minutes" />
+                        <span asp-validation-for="Duration" class="validation-message"></span>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="form-group">
+                <label asp-for="ImageFile" class="form-label"></label>
+                <div class="file-upload">
+                    <label class="file-upload-label">
+                        <input asp-for="ImageFile" type="file" class="file-input" />
+                        <span class="file-upload-text">Choose movie poster...</span>
+                        <span class="file-upload-button">Browse</span>
+                    </label>
+                </div>
+                <span asp-validation-for="ImageFile" class="validation-message"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-plus-circle"></i> Create Movie
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -75,3 +84,6 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

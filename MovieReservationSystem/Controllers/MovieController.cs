@@ -13,7 +13,7 @@ using MovieReservationSystem.ViewModels;
 
 namespace MovieReservationSystem.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class MovieController : Controller
     {
 
@@ -28,8 +28,9 @@ namespace MovieReservationSystem.Controllers
             this.autoMapper = autoMapper;
         }
 
-
-        public async Task<IActionResult> ShowAll() {
+        [AllowAnonymous]
+        public async Task<IActionResult> ShowAll()
+        {
 
 
             try
@@ -64,7 +65,7 @@ namespace MovieReservationSystem.Controllers
 
 
         [HttpGet]
-        
+
         public async Task<IActionResult> Index()
         {
 
@@ -78,6 +79,7 @@ namespace MovieReservationSystem.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Detials(int id)
         {
 
@@ -208,7 +210,7 @@ namespace MovieReservationSystem.Controllers
                 return NotFound();
             }
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> MovieDetailPage(int id)
         {
             try
@@ -241,11 +243,12 @@ namespace MovieReservationSystem.Controllers
 
         ///----------------------------------------------------------------------------------
         [HttpGet]
-        public async Task<IActionResult> MoviePagenation(string type,string? movieName =null, int page = 1, int pageSize = 8)
+        [AllowAnonymous]
+        public async Task<IActionResult> MoviePagenation(string type, string? movieName = null, int page = 1, int pageSize = 8)
         {
             IEnumerable<Movie>? movies = null;
-             var movies1 = await unitOfWork.Movie.ReadAllAsync();
-                 var total = movies1.Count();
+            var movies1 = await unitOfWork.Movie.ReadAllAsync();
+            var total = movies1.Count();
             if (type == "MovieLastest")
             {
                 movies = await unitOfWork.Movie.MoviePagenationOrderBy(page, pageSize, e => e.ID);
@@ -260,12 +263,12 @@ namespace MovieReservationSystem.Controllers
             else if (type == "MovieRealsed")
             {
                 movies = await unitOfWork.Movie.MoviePagenationOrderBy(1, 8, e => e.ProductionYear);
-               
+
             }
             else if (type == "MovieSearch")
             {
                 movies = await unitOfWork.Movie.MoviePagenationOrderBy(1, 8, e => e.Title,
-                    e=>e.Title.ToLower().Contains(movieName.ToLower()));
+                    e => e.Title.ToLower().Contains(movieName.ToLower()));
                 total = movies.Count();
 
 
@@ -292,8 +295,8 @@ namespace MovieReservationSystem.Controllers
             return View(movieAllVMs);
         }
 
-
-        public async Task<IActionResult> MovieTopRated( int page = 1, int pageSize = 8)
+        [AllowAnonymous]
+        public async Task<IActionResult> MovieTopRated(int page = 1, int pageSize = 8)
         {
             var movies = await unitOfWork.Movie.ReadAllAsync();
             var re = await unitOfWork.Review.ReadAllAsync();
@@ -315,13 +318,9 @@ namespace MovieReservationSystem.Controllers
             ViewBag.TotalPage = totalPages;
             ViewBag.PageSize = pageSize;
             ViewBag.Type = "MovieTopRated";
-           
+
             return View("MoviePagenation", movieAllVMs);
 
         }
-
-
-
-
     }
 }

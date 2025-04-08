@@ -1,37 +1,44 @@
-@model RolesViewModel
-
+@model MovieReservationSystem.ViewModels.RolesViewModel
 @{
-    ViewData["Title"] = "Manage Roles";
+    ViewData["Title"] = "Roles Management";
+    Layout = "_DashboardLayout";
 }
+@* <link rel="stylesheet" href="~/css/Administration/index.css"> *@
+<div class="admin-container">
+    <div class="admin-header">
+        <h1><i class="fas fa-user-shield me-2"></i>Roles Management</h1>
+        <hr class="header-divider" />
+    </div>
 
-<div class="container mt-4">
-    <div class="card shadow-lg">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">Roles Management</h4>
-            <a asp-page="CreateRole" class="btn btn-light btn-sm">+ Add New Role</a>
+    <div class="admin-content">
+        <div class="d-flex justify-content-between mb-4">
+            <a asp-action="CreateRole" class="btn btn-primary">
+                <i class="fas fa-plus-circle me-2"></i>Create New Role
+            </a>
+            <a asp-action="ReadUsersRole" class="btn btn-secondary">
+                <i class="fas fa-user me-2"></i>Show Users Roles
+            </a>
         </div>
-        <div class="card-body">
-            <table class="table table-hover table-bordered">
-                
-                <thead class="table-dark text-center">
+
+        <div class="roles-table">
+            <table class="table">
+                <thead>
                     <tr>
-                        <th>Role Id</th>
+                        <th>Role ID</th>
                         <th>Role Name</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.Roles)
+                    @foreach (var role in Model.Roles)
                     {
-                        <tr class="text-center">
-                            <td>@item.Id</td>
-                            <td>@item.Name</td>
+                        <tr>
+                            <td>@role.Id</td>
+                            <td>@role.Name</td>
                             <td>
-                                <a asp-page="EditRole" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
-                                    <i class="bi bi-pencil"></i> Edit
-                                </a>
-                                <a asp-page="DeleteRole" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
-                                    <i class="bi bi-trash"></i> Delete
+                                <a asp-action="DeleteRole" asp-route-roleName="@role.Name" 
+                                   class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete
                                 </a>
                             </td>
                         </tr>

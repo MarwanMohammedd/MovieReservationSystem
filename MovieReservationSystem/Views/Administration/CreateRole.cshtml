@@ -1,13 +1,38 @@
-@model RolesViewModel
+@model MovieReservationSystem.ViewModels.RolesViewModel
+@{
+    ViewData["Title"] = "Create New Role";
+      Layout = "_DashboardLayout";
+}
+@* <link rel="stylesheet" href="~/css/Administration/CreateRole.css"> *@
 
-<div asp-validation-summary="All"></div>
-
-<form method="post" asp-action="CreateRole" asp-controller="Administration">
-    <div>
-        <label asp-for="RoleName"></label>
-        <input asp-for="RoleName">
-        <span asp-validation-for="RoleName"></span>
+<div class="admin-container">
+    <div class="admin-header">
+        <h1><i class="fas fa-plus-circle me-2"></i>Create New Role</h1>
+        <hr class="header-divider" />
     </div>
-    
-    <input type="submit">Submit</input>
-</form>
+
+    <div class="admin-form">
+        <form asp-action="CreateRole" method="post">
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+            
+            <div class="form-group">
+                <label asp-for="RoleName" class="form-label"></label>
+                <input asp-for="RoleName" class="form-control" placeholder="Enter role name" />
+                <span asp-validation-for="RoleName" class="validation-message"></span>
+            </div>
+
+            <div class="form-actions mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-2"></i>Create Role
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
