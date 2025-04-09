@@ -1,0 +1,107 @@
+/* Base styles consistent with your theme */
+body{
+    
+}
+.movies-container {
+    background-color: #121212;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.page-title {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Table styles */
+.movies-table {
+    background-color: rgba(33, 33, 33, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-header {
+    background-color: #dc3545;
+    color: white;
+}
+
+.table-header th {
+    padding: 1rem;
+    font-weight: 600;
+    border: none;
+}
+
+.movie-row {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-row:last-child {
+    border-bottom: none;
+}
+
+.movie-row:hover {
+    background-color: rgba(75, 75, 75, 0.5);
+}
+
+.movie-row td {
+    padding: 1rem;
+    vertical-align: middle;
+    border: none;
+}
+
+/* Image styling */
+.movie-image img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Button styles */
+.add-btn {
+    background-color: #dc3545;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .movies-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .movie-actions {
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,45 @@
+@model MovieReservationSystem.ViewModels.UserRoleViewModel
+@{
+    Layout = "_DashboardLayout";
+    ViewData["Title"] = "Remove Role from User";
+}
+<link rel="stylesheet" href="~/css/Administration/CreateRole.css">
+<div class="admin-container">
+    <div class="admin-header">
+        <h1><i class="fas fa-user-minus me-2"></i>Remove Role from User</h1>
+        <hr class="header-divider" />
+    </div>
+
+    <div class="admin-form">
+        <form asp-action="RemoveUsersInRoles" method="post">
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+            
+            <div class="form-group">
+                <label asp-for="UserEmail" class="form-label"></label>
+                <input asp-for="UserEmail" class="form-control" placeholder="Enter user email" />
+                <span asp-validation-for="UserEmail" class="validation-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RoleName" class="form-label"></label>
+                <select asp-for="RoleName" class="form-control" asp-items="new SelectList(Model.AvailableRoles)">
+                    <option value="">-- Select Role --</option>
+                </select>
+                <span asp-validation-for="RoleName" class="validation-message"></span>
+            </div>
+
+            <div class="form-actions mt-4">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt me-2"></i>Remove Role
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

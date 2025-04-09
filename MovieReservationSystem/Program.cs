@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.DataAccess.Data;
+using MovieReservationSystem.DataAccess.Repository;
+using MovieReservationSystem.DataAccess.UnitOfWork;
+using MovieReservationSystem.Hubs;
 using MovieReservationSystem.Model.Models;
 
 namespace MovieReservationSystem
@@ -14,15 +17,29 @@ namespace MovieReservationSystem
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            
+
             builder.Services.AddDbContext<ApplicationDBContext>(
-                options=>{
+                options =>
+                {
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBaseConnectionString"));
                 }
             );
 
-            builder.Services.AddIdentity<ApplicationUser , IdentityRole<int>>()
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+            builder.Services.AddScoped<IMovieSchedleRepository, MovieSchedleRepository>();
+            builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+            builder.Services.AddSignalR();
+
+            builder.Services.AddAutoMapper(typeof(Program));
+
+
+            builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDBContext>();
+
+            builder.Services.ConfigureApplicationCookie(option => { });
+
+            builder.Services.AddAuthentication().AddGoogle(options =>{});
 
             var app = builder.Build();
 
@@ -39,11 +56,13 @@ namespace MovieReservationSystem
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.MapHub<CommentHub>("/commentHub");
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Movie}/{action=ShowAll}");
 
             app.Run();
 

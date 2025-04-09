@@ -1,0 +1,56 @@
+.admin-form {
+    background: rgba(33, 33, 33, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.form-control {
+    background-color: rgba(55, 55, 55, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form-control:focus {
+    background-color: rgba(75, 75, 75, 0.95);
+    color: #fff;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.validation-summary {
+    color: #dc3545;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 5px;
+}
+
+.validation-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}

@@ -1,0 +1,60 @@
+@model List<MovieReservationSystem.ViewModels.UserRoleViewModel>
+@{
+    ViewData["Title"] = "User Roles";
+    Layout = "_DashboardLayout";
+
+}
+<link rel="stylesheet" href="~/css/Administration/ReadUsersRole.css">
+<div class="admin-container">
+    <div class="admin-header">
+        <h1><i class="fas fa-users-cog me-2"></i>User Roles</h1>
+        <hr class="header-divider" />
+    </div>
+
+    <div class="admin-content">
+        <div class="table-responsive">
+            <table class="table user-roles-table">
+                <thead>
+                    <tr>
+                        <th>User Email</th>
+                        <th>Roles</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.UserEmail</td>
+                            <td>
+                                @if (user.AvailableRoles.Any())
+                                {
+                                    <div class="roles-container">
+                                        @foreach (var role in user.AvailableRoles)
+                                        {
+                                            <span class="role-badge">@role</span>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">No roles assigned</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="AddUsersInRoles" asp-controller="Administration"
+                                    asp-route-userEmail="@user.UserEmail" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user-plus"></i> Add Roles
+                                </a>
+                                <a asp-action="RemoveUsersInRoles" asp-controller="Administration"
+                                    asp-route-userEmail="@user.UserEmail" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-user-minus"></i> Remove Roles
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

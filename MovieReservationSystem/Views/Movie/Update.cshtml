@@ -1,0 +1,118 @@
+﻿@model MovieReservationSystem.ViewModels.MovieViewModel
+@{
+    Layout = "_DashboardLayout";
+    ViewData["Title"] = "Edit Movie";
+}
+<link rel="stylesheet" href="~/css/Movie/Update.css">
+<div class="edit-movie-container">
+    <div class="edit-header">
+        <h1><i class="fas fa-edit me-2"></i>Edit Movie</h1>
+        <hr class="header-divider" />
+    </div>
+
+    <div class="edit-form-wrapper">
+        <form asp-action="Update" method="post" enctype="multipart/form-data" class="edit-movie-form">
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+            <input type="hidden" asp-for="ID" />
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label asp-for="Title" class="form-label"></label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter movie title" />
+                        <span asp-validation-for="Title" class="validation-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="5" placeholder="Enter movie description"></textarea>
+                        <span asp-validation-for="Description" class="validation-message"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="current-image-container">
+                        <label class="form-label">Current Image</label>
+                        <div class="current-image-wrapper">
+                            @if (!string.IsNullOrEmpty(Model.ImagePath))
+                            {
+                                <img src="~/Images/@Model.ImagePath" alt="Current Movie Poster" class="current-image" />
+                            }
+                            else
+                            {
+                                <div class="no-image-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <span>No image available</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Genre" class="form-label"></label>
+                        <input asp-for="Genre" class="form-control" placeholder="Enter movie genre" />
+                        <span asp-validation-for="Genre" class="validation-message"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Director" class="form-label"></label>
+                        <input asp-for="Director" class="form-control" placeholder="Enter director name" />
+                        <span asp-validation-for="Director" class="validation-message"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="ProductionYear" class="form-label"></label>
+                        <input asp-for="ProductionYear" type="date" class="form-control" />
+                        <span asp-validation-for="ProductionYear" class="validation-message"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Duration" class="form-label"></label>
+                        <div class="input-group">
+                            <input asp-for="Duration" type="number" class="form-control" placeholder="Duration in minutes" />
+                            <span class="input-group-text">minutes</span>
+                        </div>
+                        <span asp-validation-for="Duration" class="validation-message"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-4">
+                <label asp-for="ImageFile" class="form-label">Update Image</label>
+                <div class="file-upload-wrapper">
+                    <label class="file-upload-label">
+                        <input asp-for="ImageFile" type="file" class="file-input" accept="image/*" />
+                        <span class="file-upload-text">Choose new movie poster...</span>
+                        <span class="file-upload-button">Browse</span>
+                    </label>
+                </div>
+                <span asp-validation-for="ImageFile" class="validation-message"></span>
+            </div>
+
+            <div class="form-actions mt-4">
+                <button type="submit" class="btn btn-primary btn-save">
+                    <i class="fas fa-save me-2"></i>Save Changes
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

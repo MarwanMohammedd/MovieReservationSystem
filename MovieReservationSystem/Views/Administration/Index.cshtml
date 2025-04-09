@@ -1,0 +1,50 @@
+@model MovieReservationSystem.ViewModels.RolesViewModel
+@{
+    ViewData["Title"] = "Roles Management";
+    Layout = "_DashboardLayout";
+}
+@* <link rel="stylesheet" href="~/css/Administration/index.css"> *@
+<div class="admin-container">
+    <div class="admin-header">
+        <h1><i class="fas fa-user-shield me-2"></i>Roles Management</h1>
+        <hr class="header-divider" />
+    </div>
+
+    <div class="admin-content">
+        <div class="d-flex justify-content-between mb-4">
+            <a asp-action="CreateRole" class="btn btn-primary">
+                <i class="fas fa-plus-circle me-2"></i>Create New Role
+            </a>
+            <a asp-action="ReadUsersRole" class="btn btn-secondary">
+                <i class="fas fa-user me-2"></i>Show Users Roles
+            </a>
+        </div>
+
+        <div class="roles-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Role ID</th>
+                        <th>Role Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var role in Model.Roles)
+                    {
+                        <tr>
+                            <td>@role.Id</td>
+                            <td>@role.Name</td>
+                            <td>
+                                <a asp-action="DeleteRole" asp-route-roleName="@role.Name" 
+                                   class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

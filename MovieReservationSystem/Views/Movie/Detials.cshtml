@@ -1,0 +1,63 @@
+﻿@model Movie
+@{
+    Layout = "_DashboardLayout";
+    ViewData["Title"] = "Movie Details";
+}
+<link rel="stylesheet" href="~/css/Movie/Detials.css">
+<div class="movie-details-container">
+    <div class="details-header">
+        <h1><i class="fas fa-film me-2"></i>Movie Details</h1>
+        <hr class="header-divider" />
+    </div>
+
+    <div class="details-card-wrapper">
+        <div class="details-card">
+            <div class="card-header">
+                <h2 class="movie-title">@Model.Title</h2>
+                <div class="movie-meta">
+                    <span class="badge bg-primary">@Model.Genre</span>
+                    <span class="text-muted">@Model.ProductionYear</span>
+                    <span class="text-muted">@Model.Duration minutes</span>
+                </div>
+            </div>
+            
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="detail-group">
+                            <h5 class="detail-label"><i class="fas fa-user-tie me-2"></i>Director</h5>
+                            <p class="detail-value">@Model.Director</p>
+                        </div>
+
+                        <div class="detail-group">
+                            <h5 class="detail-label"><i class="fas fa-align-left me-2"></i>Description</h5>
+                            <p class="detail-value">@Model.Description</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="movie-poster-container">
+                            @if (!string.IsNullOrEmpty(Model.ImagePath))
+                            {
+                                <img src="~/Images/@Model.ImagePath" alt="@Model.Title" class="movie-poster img-fluid" />
+                            }
+                            else
+                            {
+                                <div class="no-poster">
+                                    <i class="fas fa-image fa-4x"></i>
+                                    <p>No poster available</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-footer">
+                <a asp-action="Index" class="btn btn-back">
+                    <i class="fas fa-arrow-left me-2"></i>Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

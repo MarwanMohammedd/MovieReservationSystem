@@ -22,3 +22,16 @@ D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.pdb
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\ref\MovieReservationSystem.Model.dll
 D:\ITI-INTAKE45\MVC\Project\MovieReservationSystem\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
+D:\ITI\MVC_Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.deps.json
+D:\ITI\MVC_Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.dll
+D:\ITI\MVC_Project\MovieReservationSystem.Model\bin\Debug\net8.0\MovieReservationSystem.Model.pdb
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.AssemblyReference.cache
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.AssemblyInfoInputs.cache
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.AssemblyInfo.cs
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.csproj.CoreCompileInputs.cache
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.sourcelink.json
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.dll
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\refint\MovieReservationSystem.Model.dll
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\MovieReservationSystem.Model.pdb
+D:\ITI\MVC_Project\MovieReservationSystem.Model\obj\Debug\net8.0\ref\MovieReservationSystem.Model.dll

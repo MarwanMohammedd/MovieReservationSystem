@@ -1,0 +1,215 @@
+﻿@model ReviewViewModel
+<link rel="stylesheet" type="text/css" href="~/css/addcomment.css" />
+
+
+@using System.Security.Claims
+@{
+    var userId=0;
+    bool canDelete = false;
+    if (User.Identity.IsAuthenticated)
+    {
+        
+        userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        canDelete = User.Identity.IsAuthenticated &&
+                              (User.IsInRole("Admin") || userId == Model.UserId);
+    }
+}
+
+
+
+<div class="comments-container">
+    <div class="details-reply">
+        <h2 class="comment-form-title">Add Your Review</h2>
+        <form asp-action="Addcomment" asp-controller="Review" id="formdata" >
+            <input type="hidden" asp-for="MovieId" value="@Model.MovieId" />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="rating-container">
+                        <div class="rating-stars">
+                            <input type="radio" id="star5" asp-for="Rate" value="5" />
+                            <label for="star5" title="5 stars">★</label>
+                            <input type="radio" id="star4" asp-for="Rate" value="4" />
+                            <label for="star4" title="4 stars">★</label>
+                            <input type="radio" id="star3" asp-for="Rate" value="3" />
+                            <label for="star3" title="3 stars">★</label>
+                            <input type="radio" id="star2" asp-for="Rate" value="2" />
+                            <label for="star2" title="2 stars">★</label>
+                            <input type="radio" id="star1" asp-for="Rate" value="1" />
+                            <label for="star1" title="1 star">★</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="textarea-container">
+                        <textarea asp-for="Comment" placeholder="Write your review here..." rows="5" required></textarea>
+                    </div>
+                    <input type="button" id="sendComment" class="theme-btnn" value="Send"></input>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+    <div class="existing-comments">
+        <h2 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px;">User Reviews</h2>
+        <div class="comments-scroll-wrapper" id="con">
+        @if (Model.MovieReviews.Count() != 0)
+        {
+            @foreach (var item in Model.MovieReviews)
+            {
+                <div class="comment-item" id="@item.UserId">
+                    <div class="comment-header">
+                        <span class="comment-author">@item.User.FirstName @item.User.LastName</span>
+                        @if (canDelete)
+                        { <button  class="delete-btn theme-btnnn"
+                                data-Movie-id="@item.MovieId"
+                                data-user-id="@item.UserId">
+                            x
+                        </button>
+                        }
+                      
+                     
+
+                    </div>
+                    <div class="comment-rating">
+                        <span class="stars">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= @item.Rate)
+                                {
+                                    <span class="stars">★</span>
+                                }
+                                else
+                                {
+                                    <span class="stars">☆</span>
+                                }
+                            }
+
+                        </span>
+                        <span class="rating-value">@item.Rate / 5.0</span>
+                    </div>
+                    <div class="comment-content">
+                        @item.Commnet
+                    </div>
+                </div>
+            }
+        }
+        </div>
+    </div>
+
+
+<script src="~/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"
+        integrity="sha512-7SRCYIJtR6F8ocwW7UxW6wGKqbSyqREDbfCORCbGLatU0iugBLwyOXpzhkPyHIFdBO0K2VCu57fvP2Twgx1o2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+
+      var connectionHub = new signalR.HubConnectionBuilder().withUrl("/commentHub").build();
+
+    connectionHub
+        .start()
+        .then(() => { console.log("Connection Success") })
+        .catch(() => { alert("Connection Failed") });
+
+
+    $("#sendComment").click( () => {
+        const model = {
+            MovieId: $("#MovieId").val(),
+            Comment: $("#Comment").val(),
+            Rate: $("input[name='Rate']:checked").val()
+        };
+        try {
+             $.ajax({
+                url: "/Review/AddComment",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(model),
+              
+             })
+        } catch (error) {
+            console.error("Failed to submit comment:", error);
+        }
+    });
+    
+          
+    connectionHub.on("ReceiveComment", function (commentData) {
+
+        var commentHtml = `
+            <div class="comment-item" id="${commentData.userId}" >
+                <div class="comment-header">
+                    <span class="comment-author">${commentData.name}</span>
+                        <button  class="delete-btn theme-btnnn"
+                          data-Movie-id="${commentData.movieId}"
+                          data-user-id="${commentData.userId}">
+                                         x
+                                           </button>
+                </div>
+                <div class="comment-rating">
+                    <span class="stars">`;
+
+        for (var i = 1; i <= 5; i++) {
+            if (i <= commentData.rate) {
+                commentHtml += `<span class="stars">★</span>`;
+            } else {
+                commentHtml += `<span class="stars">☆</span>`;
+            }
+        }
+
+        commentHtml += `</span>
+                        <span class="rating-value">${commentData.rate} / 5.0</span>
+                    </div>
+                    <div class="comment-content">
+                        ${commentData.commnet}
+                    </div>
+                </div>`;
+                console.log(commentHtml);
+        $("#con").prepend(commentHtml);
+       $("#Comment").val("");
+        $("input[name='Rate']").prop("checked", false); 
+});
+    //------------------------Delete-------------------------
+
+
+
+    $(document).on('click', '.delete-btn', function() {
+             const button = $(this);
+    const movieId = button.data('movie-id');
+    const userId = button.data('user-id');
+        console.log(movieId);
+        console.log(userId);
+
+        var model = {
+            MovieId: movieId,
+            UserId: userId
+        }
+        try {
+            $.ajax({
+                url: "/Review/DeleteComment",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(model),
+            });
+
+            } catch (error) {
+                console.error("Failed to submit comment:", error);
+            }
+        });
+
+    connectionHub.on("DeleteComment", function (commentData) {
+        console.log(commentData);
+        if (commentData.flag==true) {
+            var id=commentData.userId;
+           $(`#${id}`).remove();
+        }
+        else {
+            alert("You are not authorized to delete this comment.");
+        }
+
+    });
+</script>
+
