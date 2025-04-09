@@ -40,13 +40,10 @@
                         <td class="movie-year">@movie.ProductionYear</td>
                         <td class="movie-duration">@movie.Duration min</td>
                         <td class="movie-actions">
-                            <a asp-action="Details" asp-route-id="@movie.ID" class="btn btn-info action-btn">
-                                <i class="fas fa-info-circle"></i>
-                            </a>
-                            <a asp-action="Update" asp-route-id="@movie.ID" class="btn btn-warning action-btn">
+                            <a asp-action="Update" title="Edit Movie" asp-route-id="@movie.ID" class="btn btn-warning action-btn">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a asp-action="Delete" asp-route-id="@movie.ID" class="btn btn-danger action-btn">
+                            <a asp-action="Delete" title="Delete Movie" asp-route-id="@movie.ID" class="btn btn-danger action-btn">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>

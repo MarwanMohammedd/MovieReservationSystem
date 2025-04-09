@@ -1433,3 +1433,42 @@ hr {
 /*--------------------------------------
 --------- Pre Loader Style END ---------
 ---------------------------------------*/
+
+
+.search-group:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s ease;
+}
+
+.search-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+:root {
+    --blood-red: #8b0000;
+    --dark-red: #5c0000;
+    --black: #0a0a0a;
+    --gray: #1a1a1a;
+    --light-gray: #333;
+    --white: #f0f0f0;
+    --gold: #d4af37;
+}
+.search-group input:focus {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+    
+.navbar-brand svg {
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand svg path {
+    fill: #eb315a;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover svg path {
+    fill: var(--gold);
+}
+

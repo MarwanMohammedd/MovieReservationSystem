@@ -29,39 +29,31 @@ namespace MovieReservationSystem.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> ShowAll()
+       public async Task<IActionResult> ShowAll()
+    {
+        try
         {
-
-
-            try
-            {
-                IEnumerable<Movie> movies = await unitOfWork.Movie.ReadAllAsync();
-
-                IEnumerable<MovieAllVM> movieDetailPageVMs = movies.Select(e => new MovieAllVM
-                {
-
-                    ID = e.ID,
-                    Title = e.Title,
-                    ImagePath = e.ImagePath,
-                    Description = e.Description,
-                    RateAvg = unitOfWork.Review.ReadAllAsync().Result.Any(re => re.MovieId == e.ID) ? (int)unitOfWork.Review.ReadAllAsync().Result.Where(review => review.MovieId == e.ID).Average(e => e.Rate) : 0,
-                    TotalCount = unitOfWork.Review.ReadAllAsync().Result.Where(review => review.MovieId == e.ID).Count()
-
-                });
-                return View(movieDetailPageVMs);
-
-
-
-            }
-            catch
+            IEnumerable<Movie> movies = await unitOfWork.Movie.ReadAllAsync();
+            movies = movies.OrderByDescending(e=>e.ID).Take(4);
+            IEnumerable<MovieAllVM> movieDetailPageVMs = movies.Select(e => new MovieAllVM
             {
 
-                //Change later to home page
-                return BadRequest("Error 404");
-            }
+                ID = e.ID,
+                Title = e.Title,
+                ImagePath = e.ImagePath,
+                Description = e.Description,
+                RateAvg = unitOfWork.Review.ReadAllAsync().Result.Any(re => re.MovieId == e.ID) ? (int)unitOfWork.Review.ReadAllAsync().Result.Where(review => review.MovieId == e.ID).Average(e => e.Rate) : 0,
+                TotalCount = unitOfWork.Review.ReadAllAsync().Result.Where(review => review.MovieId == e.ID).Count()
 
+            });
+            return View(movieDetailPageVMs);
         }
-
+        catch
+        {
+            //Change later to home page
+            return BadRequest("Error 404");
+        }
+    }
 
 
         [HttpGet]
@@ -244,7 +236,7 @@ namespace MovieReservationSystem.Controllers
         ///----------------------------------------------------------------------------------
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> MoviePagenation(string type, string? movieName = null, int page = 1, int pageSize = 8)
+        public async Task<IActionResult> MoviePagenation(string type="MovieLastest", string? movieName = "#*&", int page = 1, int pageSize = 8)
         {
             IEnumerable<Movie>? movies = null;
             var movies1 = await unitOfWork.Movie.ReadAllAsync();
@@ -256,21 +248,20 @@ namespace MovieReservationSystem.Controllers
             else if (type == "MovieCommingSoon")
             {
                 DateOnly date = DateOnly.FromDateTime(DateTime.Now);
-                movies = await unitOfWork.Movie.MoviePagenationOrderBy(1, 8, e => e.ProductionYear,
+                movies = await unitOfWork.Movie.MoviePagenationOrderBy(page, pageSize, e => e.ProductionYear,
                     e => e.ProductionYear > date);
                 total = movies.Count();
             }
             else if (type == "MovieRealsed")
             {
-                movies = await unitOfWork.Movie.MoviePagenationOrderBy(1, 8, e => e.ProductionYear);
+                movies = await unitOfWork.Movie.MoviePagenationOrderBy(page, pageSize, e => e.ProductionYear);
 
             }
             else if (type == "MovieSearch")
             {
-                movies = await unitOfWork.Movie.MoviePagenationOrderBy(1, 8, e => e.Title,
+                movies = await unitOfWork.Movie.MoviePagenationOrderBy(page, pageSize, e => e.Title,
                     e => e.Title.ToLower().Contains(movieName.ToLower()));
                 total = movies.Count();
-
 
             }
 

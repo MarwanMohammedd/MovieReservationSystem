@@ -6,13 +6,12 @@ namespace MovieReservationSystem.ViewModels
     public class RegisterViewModel
     {
         [Required(ErrorMessage = "First Name Is Required")]
-        //[MinLength(6, ErrorMessage = "Must More Than 6 Charachters")]
         [Display(Name = "First Name")]
+        
         public string FirstName { get; set; } = null!;
         
 
         [Required(ErrorMessage = "Last Name Is Required")]
-       // [MinLength(6, ErrorMessage = "Must More Than 6 Charachters")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; } = null!;
 
