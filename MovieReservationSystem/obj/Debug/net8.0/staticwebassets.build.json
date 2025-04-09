@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "b6gaUpay4gnbcphSQVLZ8mBjBDvpAsNaLagNCj5qJzw=",
+  "Hash": "IKxyDWA0m35NHJpfXFoMCqAYis8zOfLtHeaqQvepriU=",
   "Source": "MovieReservationSystem",
   "BasePath": "_content/MovieReservationSystem",
   "Mode": "Default",
@@ -224,25 +224,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Account\\register.css"
-    },
-    {
-      "Identity": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Account\\UserAccount.css",
-      "SourceId": "MovieReservationSystem",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\",
-      "BasePath": "_content/MovieReservationSystem",
-      "RelativePath": "css/Account/UserAccount.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\Account\\UserAccount.css"
     },
     {
       "Identity": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\addcomment.css",
@@ -775,25 +756,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\OIP2.jpg"
-    },
-    {
-      "Identity": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\sam.jpeg",
-      "SourceId": "MovieReservationSystem",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\",
-      "BasePath": "_content/MovieReservationSystem",
-      "RelativePath": "Images/sam.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\sam.jpeg"
     },
     {
       "Identity": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\slide3.png",

@@ -21,32 +21,6 @@ namespace MovieReservationSystem.Controllers
         }
 
         [HttpGet]
-        public IActionResult UserAccount(int userId)
-        {
-            // In a real application, you would fetch the user data from your database
-            var viewModel = new UserAccountViewModel
-            {
-                FirstName = "John", // Example data
-                LastName = "Doe",    // Example data
-                UserEmail = "john.doe@example.com" // Example data
-            };
-
-            return View(viewModel);
-        }
-
-        [HttpPost]
-        public IActionResult UserAccount(UserAccountViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            // Process the form data and save changes
-            // Redirect to appropriate page after saving
-            return RedirectToAction("Index", "Home");
-        }
-        [HttpGet]
         public async Task<IActionResult> LogIn(string? ReturnUrl)
         {
             ViewData["ReturnUrl"] = ReturnUrl;
@@ -71,7 +45,7 @@ namespace MovieReservationSystem.Controllers
                 if (user is not null)
                 {
                     var result = await _signInManager.PasswordSignInAsync
-                     (user.UserName, logInViewModel.Password, isPersistent: logInViewModel.RememberMe, lockoutOnFailure: false);
+                    (user.UserName!, logInViewModel.Password, isPersistent: logInViewModel.RememberMe, lockoutOnFailure: false);
 
                     if (result.Succeeded)
                     {
@@ -104,74 +78,131 @@ namespace MovieReservationSystem.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpGet]
         public IActionResult ExternalLogin(string provider, string returnUrl)
         {
             var redirectUrl = Url.Action(
-                action: "ExternalLoginCallback",
-                controller: "Account",
-                values: new { ReturnUrl = returnUrl }
+            action: "ExternalLoginCallback",
+            controller: "Account",
+            values: new { ReturnUrl = returnUrl }
             );
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
 
             return new ChallengeResult(provider, properties);
         }
 
-        [AllowAnonymous]
+        [HttpGet]
         public async Task<IActionResult> ExternalLoginCallback(string? returnUrl, string? remoteError)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
-            if (remoteError != null)
+            var users = _userManager.Users.ToList();
+            if (users.Count() == 0)
             {
-                return Content($"<script>alert('Error from external provider: {remoteError}'); window.close();</script>", "text/html");
-            }
+                returnUrl = returnUrl ?? Url.Content("~/");
+                if (remoteError != null)
+                {
+                    return Content($"<script>alert('Error from external provider: {remoteError}'); window.close();</script>", "text/html");
+                }
 
-            var info = await _signInManager.GetExternalLoginInfoAsync();
+                var info = await _signInManager.GetExternalLoginInfoAsync();
+                if (info == null)
+                {
+                    return Content($"<script>alert('Error loading external login information.'); window.close();</script>", "text/html");
+                }
 
-            if (info == null)
-            {
-                return Content($"<script>alert('Error loading external login information.'); window.close();</script>", "text/html");
-            }
-
-            var signInResult = await _signInManager.ExternalLoginSignInAsync(
+                var signInResult = await _signInManager.ExternalLoginSignInAsync(
                 info.LoginProvider,
                 info.ProviderKey,
                 isPersistent: false,
                 bypassTwoFactor: true
-            );
+                );
 
-            if (signInResult.Succeeded)
-            {
-                return LocalRedirect(returnUrl);
-            }
-
-            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-
-            if (email != null)
-            {
-                var user = await _userManager.FindByEmailAsync(email);
-
-                if (user == null)
+                if (signInResult.Succeeded)
                 {
-                    user = new ApplicationUser
-                    {
-                        UserName = email,
-                        Email = email,
-                        FirstName = info.Principal.FindFirstValue(ClaimTypes.GivenName), // Retrieve and set the user's first name.
-                        LastName = info.Principal.FindFirstValue(ClaimTypes.Surname)    // Retrieve and set the user's last name.
-                    };
-
-                    await _userManager.CreateAsync(user);
+                    return LocalRedirect(returnUrl);
                 }
 
-                await _userManager.AddLoginAsync(user, info);
+                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
 
-                await _signInManager.SignInAsync(user, isPersistent: false);
+                if (email != null)
+                {
+                    var user = await _userManager.FindByEmailAsync(email);
 
-                return LocalRedirect(returnUrl);
+                    if (user == null)
+                    {
+                        user = new ApplicationUser
+                        {
+                            UserName = email,
+                            Email = email,
+                            FirstName = info.Principal.FindFirstValue(ClaimTypes.GivenName)!,
+                            LastName = info.Principal.FindFirstValue(ClaimTypes.Surname)!
+                        };
+
+                        await _userManager.CreateAsync(user);
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
+
+                    await _userManager.AddLoginAsync(user, info);
+
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    return LocalRedirect(returnUrl);
+                }
+
             }
+            else
+            {
+                returnUrl = returnUrl ?? Url.Content("~/");
+                if (remoteError != null)
+                {
+                    return Content($"<script>alert('Error from external provider: {remoteError}'); window.close();</script>", "text/html");
+                }
 
+                var info = await _signInManager.GetExternalLoginInfoAsync();
+                if (info == null)
+                {
+                    return Content($"<script>alert('Error loading external login information.'); window.close();</script>", "text/html");
+                }
+
+                var signInResult = await _signInManager.ExternalLoginSignInAsync(
+                info.LoginProvider,
+                info.ProviderKey,
+                isPersistent: false,
+                bypassTwoFactor: true
+                );
+
+                if (signInResult.Succeeded)
+                {
+                    return LocalRedirect(returnUrl);
+                }
+
+                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+
+                if (email != null)
+                {
+                    var user = await _userManager.FindByEmailAsync(email);
+
+                    if (user == null)
+                    {
+                        user = new ApplicationUser
+                        {
+                            UserName = email,
+                            Email = email,
+                            FirstName = info.Principal.FindFirstValue(ClaimTypes.GivenName)!,
+                            LastName = info.Principal.FindFirstValue(ClaimTypes.Surname)!
+                        };
+
+                        await _userManager.CreateAsync(user);
+                        await _userManager.AddToRoleAsync(user, "User");
+                    }
+
+                    await _userManager.AddLoginAsync(user, info);
+
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    return LocalRedirect(returnUrl);
+                }
+
+            }
             return Content($"<script>alert('Email claim not received. Please contact support.'); window.close();</script>", "text/html");
         }
 
@@ -287,13 +318,10 @@ namespace MovieReservationSystem.Controllers
             }
             return Json(true);
         }
-
         [HttpGet]
         public IActionResult AccessDenied()
         {
             return View();
         }
-
     }
-
 }

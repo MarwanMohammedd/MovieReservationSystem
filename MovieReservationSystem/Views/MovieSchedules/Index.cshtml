@@ -1,42 +1,55 @@
 ﻿@model IEnumerable<MovieReservationSystem.ViewModels.MovieScheduleVM>
 @{
     Layout = "_DashboardLayout";
+    ViewData["Title"] = "Movie Schedules";
 }
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>
-              MovieId
-            </th>
-            <th>
-              MovieTitle
-            </th>
-            <th>
-               StartTime
-            </th>
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieTitle)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartTime)
-                </td>
 
-            <td>
-                    <a asp-action="Update" asp-route-id="@item.ID"  class="btn btn-warning">Update</a>
-                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<a asp-action="Add" class="btn btn-primary">Add New MovieSchedule</a>
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Movie Schedules</h2>
+        <a asp-action="Add" class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i>Add New Schedule
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0">
+                    <thead class="bg-light">
+                        <tr>
+                            <th class="ps-4">Movie ID</th>
+                            <th>Movie Title</th>
+                            <th>Start Time</th>
+                            <th class="text-end pe-4">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="ps-4 align-middle">@Html.DisplayFor(modelItem => item.MovieId)</td>
+                                <td class="align-middle">
+                                    <strong>@Html.DisplayFor(modelItem => item.MovieTitle)</strong>
+                                </td>
+                                <td class="align-middle">
+                                    @Html.DisplayFor(modelItem => item.StartTime)
+                                </td>
+                                <td class="text-end pe-4 align-middle">
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Update" asp-route-id="@item.ID" class="btn btn-sm btn-outline-warning">
+                                            <i class="fas fa-edit me-1"></i>Edit
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash me-1"></i>Delete
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
