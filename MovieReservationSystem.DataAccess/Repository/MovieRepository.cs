@@ -21,11 +21,6 @@ namespace MovieReservationSystem.DataAccess.Repository
             this.applicationDBContext = applicationDBContext;
         }
 
-        //public async Task<IEnumerable<Movie>> MoviePagenation(int page , int size )
-        //{
-        //    return await applicationDBContext.Movies.Skip((page - 1) * size).Take(size).ToListAsync();
-        //}
-
         public async Task<IEnumerable<Movie>> MoviePagenationOrderBy(int page, int size,
             Expression<Func<Movie, object>> Predicate, Expression<Func<Movie, bool>> PredicateWhere=null )
         {
