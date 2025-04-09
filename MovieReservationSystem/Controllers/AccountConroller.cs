@@ -58,7 +58,7 @@ namespace MovieReservationSystem.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("ShowAll" , "Movie");
                         }
                     }
                     else
@@ -244,7 +244,7 @@ namespace MovieReservationSystem.Controllers
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         await _userManager.AddToRoleAsync(user, "Admin");
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("ShowAll", "Movie");
                     }
                     else
                     {
@@ -270,7 +270,7 @@ namespace MovieReservationSystem.Controllers
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         await _userManager.AddToRoleAsync(user, "User");
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("ShowAll", "Movie");
                     }
                     else
                     {
@@ -288,7 +288,7 @@ namespace MovieReservationSystem.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction(nameof(LogIn));
+            return RedirectToAction("ShowAll" , "Movie");
         }
 
         [HttpGet]
