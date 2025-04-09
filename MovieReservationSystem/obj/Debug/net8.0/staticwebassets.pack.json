@@ -21,10 +21,6 @@
       "PackagePath": "staticwebassets\\Images\\OIP2.jpg"
     },
     {
-      "Id": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\sam.jpeg",
-      "PackagePath": "staticwebassets\\Images\\sam.jpeg"
-    },
-    {
       "Id": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\slide3.png",
       "PackagePath": "staticwebassets\\Images\\slide3.png"
     },
@@ -51,10 +47,6 @@
     {
       "Id": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\maxresdefault.jpg",
       "PackagePath": "staticwebassets\\assets\\maxresdefault.jpg"
-    },
-    {
-      "Id": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Account\\UserAccount.css",
-      "PackagePath": "staticwebassets\\css\\Account\\UserAccount.css"
     },
     {
       "Id": "D:\\ITI-INTAKE45\\MVC\\Project\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Account\\accessdenied.css",

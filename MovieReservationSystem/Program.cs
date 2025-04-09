@@ -39,7 +39,7 @@ namespace MovieReservationSystem
 
             builder.Services.ConfigureApplicationCookie(option => { });
 
-            builder.Services.AddAuthentication().AddGoogle(options =>{});
+            builder.Services.AddAuthentication().AddGoogle(options => { });
 
             var app = builder.Build();
 
