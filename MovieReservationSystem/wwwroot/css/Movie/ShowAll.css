@@ -1,0 +1,219 @@
+﻿
+.ghost-btn {
+    position: relative;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+/*
+.theme-btn {
+    background: #eb315a;
+    border: 1px solid #eb315a;
+    color: #fff;
+    border-radius: 35px;
+    padding: 5px 25px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+    .theme-btn:hover {
+        border: 1px solid #eb315a;
+        background: transparent;
+        color: #eb315a;
+    }*/
+
+
+.ghost-btn .hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(178, 34, 34, 0.2);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.ghost-btn:hover {
+    border-color: rgba(178, 34, 34, 0.5);
+    color: #fff;
+}
+
+    .ghost-btn:hover .hover-effect {
+        width: 100%;
+    }
+
+/* زر Show All */
+.show-all-btn {
+    background: rgb(235, 49, 90);
+    color: #fff;
+    border: 1px solid rgb(235, 49, 120);
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .show-all-btn i {
+        transition: transform 0.3s ease;
+    }
+
+    .show-all-btn:hover {
+        /* background: rgba(178, 34, 34, 0.2); */
+        transform: translateY(-3px);
+    }
+
+        .show-all-btn:hover i {
+            transform: translateX(5px);
+        }
+
+/* تحسينات عامة */
+.portfolio-content {
+    padding: 20px;
+}
+
+video {
+    /* position: relative !important; */
+    max-width: 100%;
+    max-height: 100%;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scale(1.2, 1.2);
+    pointer-events: none;
+}
+
+.video-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /color: #fff;
+    z-index: 2;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+    .video-overlay-text h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #fff; /* اللون الأبيض الزاهي */
+        text-shadow: 4px 4px 15px rgba(235, 49, 90,0.9), 0 0 25px rgba(235, 49, 90,0.5); /* ظل أحمر قوي مع إضاءة مشعة */
+    }
+
+    .video-overlay-text p {
+        font-size: 1.5rem;
+        color: #fff; /* اللون الأبيض الزاهي */
+        text-shadow: 2px 2px 10px rgba(235, 49, 90,0.9), 0 0 20px rgba(235, 49, 90,0.5)); /* ظل أحمر قوي مع تأثير الإضاءة */
+    }
+
+
+
+
+/* Animation */
+@@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*-------------------------------
+	-------- video AREA CSS START ---
+	--------------------------------*/
+.video-area {
+    position: relative;
+    margin-top: 35px;
+}
+
+.video-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(19, 21, 31, 0.6);
+    padding: 20px 35px;
+    width: 100%;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.video-area:hover .video-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.video-text h2,
+.video-text h4,
+.video-text p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+    .video-text h2:hover {
+        color: #fece50;
+        transform: scale(1.02);
+    }
+
+.video-text h2 {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.video-text h4 {
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.video-text p {
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+/* تأثير زر التشغيل */
+.popup-youtube i {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+    animation: pulse 2s infinite;
+}
+
+    .popup-youtube i:hover {
+        color: #fece50;
+        border: 2px solid #fece50;
+        transform: scale(1.1);
+        animation: none;
+    }
