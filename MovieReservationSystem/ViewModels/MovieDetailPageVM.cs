@@ -16,5 +16,13 @@ namespace MovieReservationSystem.ViewModels
         public IEnumerable<DateTime>? MovieScheduleList { get; set; }
 
         public IEnumerable<Review>? reviews { get; set; }
+
+
+
+        // Added Theater Properties
+        public int TheaterId { get; set; }
+        public string TheaterName { get; set; } = null!;
+        public int TheaterSeatsCount { get; set; }
+        public IEnumerable<Seat> TheaterSeats { get; set; } = null!;
     }
 }

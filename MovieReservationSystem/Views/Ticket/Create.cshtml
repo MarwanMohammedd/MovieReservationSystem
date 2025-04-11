@@ -1,0 +1,200 @@
+﻿@using MovieReservationSystem.DTO
+@model TicketBookingDto
+@{
+    ViewData["Title"] = "Seat Reservation";
+}
+
+<style>
+        /* Moviepoint Template Styles */
+        body {
+            background-color: #13151f;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .breadcrumb-area {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x300');
+            padding: 100px 0;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .breadcrumb-area-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .transformers-area {
+            margin-bottom: 50px;
+        }
+
+        .transformers-box {
+            background: #1a1a3a;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        
+
+        .seat-card {
+            background: #1a1a3a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #2a2a4a;
+        }
+
+            .seat-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px #eb315a;
+            }
+
+        .seat-number {
+            color: #eb315a;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .seat-meta {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .theme-btn {
+            background: #eb315a;
+            border: 1px solid #eb315a;
+            color: #fff;
+            border-radius: 35px;
+            padding: 5px 25px;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none; /* Removes underline if applied to links */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            /* Button-specific fixes */
+            line-height: normal; /* Fixes vertical alignment */
+            appearance: none; /* Removes default button styling in some browsers */
+            -webkit-appearance: none; /* For Safari */
+            text-align: center; /* Ensures text stays centered */
+        }
+
+        /* This will style both buttons and anchor tags with theme-btn class */
+        button.theme-btn,
+        a.theme-btn {
+            background: #eb315a;
+            border: 1px solid #eb315a;
+            color: #fff;
+            border-radius: 35px;
+            padding: 5px 25px;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            line-height: normal;
+            appearance: none;
+            -webkit-appearance: none;
+            text-align: center;
+        }
+
+            /* Hover state for both buttons and links */
+            .theme-btn:hover,
+            button.theme-btn:hover,
+            a.theme-btn:hover {
+                border: 1px solid #eb315a;
+                background: transparent;
+                color: #eb315a;
+                text-decoration: none; /* Ensures no underline appears on hover */
+            }
+
+            /* Focus state for accessibility */
+            .theme-btn:focus,
+            button.theme-btn:focus,
+            a.theme-btn:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(235, 49, 90, 0.3);
+            }
+
+        
+    </style>
+
+    <!-- Breadcrumb Area -->
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area-content">
+                        <h1>Confirm Your Seats</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seat Summary Section -->
+    <section class="transformers-area">
+        <div class="container">
+            <div class="transformers-box">
+                <div class="row flexbox-center">
+                    <div class="col-lg-12 text-center">
+                        <h2 style="font-size: 32px; margin-bottom: 20px;">Selected Seats: @Model.SeatNumbers.Count</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seat Selection Section -->
+    <section class="details-area">
+        <div class="container">
+            <form method="post" asp-action="SaveCreate" asp-controller="Ticket">
+                <input type="hidden" asp-for="MovieId" />
+                <input type="hidden" asp-for="TheaterId" />
+                <input type="hidden" asp-for="UserId" />
+
+                <div class="row">
+                    @foreach (var seatNumber in Model.SeatNumbers)
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="seat-card">
+                                <div class="seat-icon">
+                                    <i class="icofont icofont-chair" style="font-size: 2.5rem; color: #eb315a;"></i>
+                                </div>
+                                <div class="seat-number">@seatNumber</div>
+                                <input type="hidden" name="SeatNumbers" value="@seatNumber" />
+                                <div class="seat-meta">
+                                    <p><i class="icofont icofont-clock-time"></i> @DateTime.Now.ToString("hh:mm tt")</p>
+                                    <p><i class="icofont icofont-ticket"></i> Standard Seat</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="text-center" style="margin: 50px 0;">
+                    <button type="submit" class="theme-btn">
+                        <i class="icofont icofont-ticket"></i> CONFIRM RESERVATION
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>

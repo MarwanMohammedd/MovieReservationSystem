@@ -1,0 +1,621 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MovieReservationSystem.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MovieReservationSystem.8884dkkyy9.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\D1.jpg",
+      "PackagePath": "staticwebassets\\Images\\D1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\D2.jpg",
+      "PackagePath": "staticwebassets\\Images\\D2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\OIP (1).jpg",
+      "PackagePath": "staticwebassets\\Images\\OIP (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\OIP2.jpg",
+      "PackagePath": "staticwebassets\\Images\\OIP2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\slide3.png",
+      "PackagePath": "staticwebassets\\Images\\slide3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\Images\\xyz.jpg",
+      "PackagePath": "staticwebassets\\Images\\xyz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\M.jpg",
+      "PackagePath": "staticwebassets\\assets\\M.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\R (1).jpeg",
+      "PackagePath": "staticwebassets\\assets\\R (1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\R.jpeg",
+      "PackagePath": "staticwebassets\\assets\\R.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\Video\\4.mp4",
+      "PackagePath": "staticwebassets\\assets\\Video\\4.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\l_816692_2beaba6e.jpg",
+      "PackagePath": "staticwebassets\\assets\\l_816692_2beaba6e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\maxresdefault.jpg",
+      "PackagePath": "staticwebassets\\assets\\maxresdefault.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\sp.jpg",
+      "PackagePath": "staticwebassets\\assets\\sp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\assets\\sp2.jpg",
+      "PackagePath": "staticwebassets\\assets\\sp2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Account\\accessdenied.css",
+      "PackagePath": "staticwebassets\\css\\Account\\accessdenied.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Account\\login.css",
+      "PackagePath": "staticwebassets\\css\\Account\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Account\\register.css",
+      "PackagePath": "staticwebassets\\css\\Account\\register.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Administration\\CreateRole.css",
+      "PackagePath": "staticwebassets\\css\\Administration\\CreateRole.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Administration\\ReadUsersRole.css",
+      "PackagePath": "staticwebassets\\css\\Administration\\ReadUsersRole.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Administration\\index.css",
+      "PackagePath": "staticwebassets\\css\\Administration\\index.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\DashBoard\\site.css",
+      "PackagePath": "staticwebassets\\css\\DashBoard\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\MoviePagenation.css",
+      "PackagePath": "staticwebassets\\css\\MoviePagenation.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Movie\\Add.css",
+      "PackagePath": "staticwebassets\\css\\Movie\\Add.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Movie\\Detials.css",
+      "PackagePath": "staticwebassets\\css\\Movie\\Detials.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Movie\\ShowAll.css",
+      "PackagePath": "staticwebassets\\css\\Movie\\ShowAll.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\Movie\\Update.css",
+      "PackagePath": "staticwebassets\\css\\Movie\\Update.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\addcomment.css",
+      "PackagePath": "staticwebassets\\css\\addcomment.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\icofont.css",
+      "PackagePath": "staticwebassets\\css\\icofont.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\movieListIndex.css",
+      "PackagePath": "staticwebassets\\css\\movieListIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\owl.video.play.html",
+      "PackagePath": "staticwebassets\\css\\owl.video.play.html"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\css\\slicknav.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\fonts\\icofont7858.eot",
+      "PackagePath": "staticwebassets\\fonts\\icofont7858.eot"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\fonts\\icofont7858.svg",
+      "PackagePath": "staticwebassets\\fonts\\icofont7858.svg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\fonts\\icofont7858.ttf",
+      "PackagePath": "staticwebassets\\fonts\\icofont7858.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\fonts\\icofont7858.woff",
+      "PackagePath": "staticwebassets\\fonts\\icofont7858.woff"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\author.png",
+      "PackagePath": "staticwebassets\\img\\author.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\blog-detail.png",
+      "PackagePath": "staticwebassets\\img\\blog-detail.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\breadcrumb.png",
+      "PackagePath": "staticwebassets\\img\\breadcrumb.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\cast\\cast1.png",
+      "PackagePath": "staticwebassets\\img\\cast\\cast1.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\cast\\cast2.html",
+      "PackagePath": "staticwebassets\\img\\cast\\cast2.html"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\cast\\cast3.png",
+      "PackagePath": "staticwebassets\\img\\cast\\cast3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\cast\\cast4.png",
+      "PackagePath": "staticwebassets\\img\\cast\\cast4.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\cast\\cast5.png",
+      "PackagePath": "staticwebassets\\img\\cast\\cast5.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\cast\\cast6.png",
+      "PackagePath": "staticwebassets\\img\\cast\\cast6.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\cast\\cast7.png",
+      "PackagePath": "staticwebassets\\img\\cast\\cast7.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\favcion.png",
+      "PackagePath": "staticwebassets\\img\\favcion.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\footer-bg.png",
+      "PackagePath": "staticwebassets\\img\\footer-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\hero-area.png",
+      "PackagePath": "staticwebassets\\img\\hero-area.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\loader.gif",
+      "PackagePath": "staticwebassets\\img\\loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\news\\news1.jpg",
+      "PackagePath": "staticwebassets\\img\\news\\news1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\news\\news2.jpg",
+      "PackagePath": "staticwebassets\\img\\news\\news2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\news\\news3.jpg",
+      "PackagePath": "staticwebassets\\img\\news\\news3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\portfolio\\portfolio1.png",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio1.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\portfolio\\portfolio2.png",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio2.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\portfolio\\portfolio3.png",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\portfolio\\portfolio4.png",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio4.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\portfolio\\portfolio5.png",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio5.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\portfolio\\portfolio6.png",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio6.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\select-icon.png",
+      "PackagePath": "staticwebassets\\img\\select-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\sidebar\\sidebar1.png",
+      "PackagePath": "staticwebassets\\img\\sidebar\\sidebar1.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\sidebar\\sidebar2.png",
+      "PackagePath": "staticwebassets\\img\\sidebar\\sidebar2.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\sidebar\\sidebar3.png",
+      "PackagePath": "staticwebassets\\img\\sidebar\\sidebar3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\sidebar\\sidebar4.png",
+      "PackagePath": "staticwebassets\\img\\sidebar\\sidebar4.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\slide1.png",
+      "PackagePath": "staticwebassets\\img\\slide1.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\slide2.png",
+      "PackagePath": "staticwebassets\\img\\slide2.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\slide3.png",
+      "PackagePath": "staticwebassets\\img\\slide3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\slide4.jpg",
+      "PackagePath": "staticwebassets\\img\\slide4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\video\\video1.png",
+      "PackagePath": "staticwebassets\\img\\video\\video1.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\video\\video2.png",
+      "PackagePath": "staticwebassets\\img\\video\\video2.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\video\\video3.png",
+      "PackagePath": "staticwebassets\\img\\video\\video3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\video\\video4.png",
+      "PackagePath": "staticwebassets\\img\\video\\video4.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\img\\video\\video5.png",
+      "PackagePath": "staticwebassets\\img\\video\\video5.png"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\js\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\jquery.slicknav.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slicknav.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\MovieReservationSystem\\MovieReservationSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MovieReservationSystem.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MovieReservationSystem.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MovieReservationSystem.props",
+      "PackagePath": "build\\MovieReservationSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MovieReservationSystem.props",
+      "PackagePath": "buildMultiTargeting\\MovieReservationSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MovieReservationSystem.props",
+      "PackagePath": "buildTransitive\\MovieReservationSystem.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

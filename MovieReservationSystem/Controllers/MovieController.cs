@@ -210,6 +210,12 @@ namespace MovieReservationSystem.Controllers
                 Movie? movie = await unitOfWork.Movie.GetItemAsync(el => el.ID == id);
                 MovieDetailPageVM movieDetailPageVM = autoMapper.Map<MovieDetailPageVM>(movie);
 
+                // Getting The Movie's Theater
+                Theater? theater = await unitOfWork.Theater.GetTheaterByMovieId(id);
+
+
+                
+
                 var movies = await unitOfWork.MovieSchedle.GetAllAsync();
                 movieDetailPageVM.MovieScheduleList = movies
                     .Where(el => el.MovieId == id)
@@ -219,6 +225,13 @@ namespace MovieReservationSystem.Controllers
                 var reviewss = reviews.Where(review => review.MovieId == id).ToList();
 
                 movieDetailPageVM.reviews = reviewss;
+
+                // Adding The Theater data to the View Model
+                movieDetailPageVM.TheaterId = theater.ID;
+                movieDetailPageVM.TheaterName = theater.Name;
+                movieDetailPageVM.TheaterSeats = theater.Seats;
+                movieDetailPageVM.TheaterSeatsCount = theater.SeatsCount;
+
                 return View(movieDetailPageVM);
             }
             catch
