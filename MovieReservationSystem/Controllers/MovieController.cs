@@ -238,7 +238,7 @@ namespace MovieReservationSystem.Controllers
             {
 
                 //Change later to home page
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ShowAll));
             }
 
         }

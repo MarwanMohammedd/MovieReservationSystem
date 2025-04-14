@@ -29,6 +29,7 @@ namespace MovieReservationSystem.Controllers
                 EmailAddress = string.Empty,
                 Password = string.Empty,
                 RememberMe = false,
+                ReturnUrl = ReturnUrl,
                 ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList()
             };
             return View(logInViewModel);

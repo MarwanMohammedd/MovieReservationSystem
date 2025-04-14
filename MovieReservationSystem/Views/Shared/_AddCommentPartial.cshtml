@@ -4,11 +4,11 @@
 
 @using System.Security.Claims
 @{
-    var userId=0;
+    var userId = 0;
     bool canDelete = false;
     if (User.Identity.IsAuthenticated)
     {
-        
+
         userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
         canDelete = User.Identity.IsAuthenticated &&
                               (User.IsInRole("Admin") || userId == Model.UserId);
@@ -20,7 +20,7 @@
 <div class="comments-container">
     <div class="details-reply">
         <h2 class="comment-form-title">Add Your Review</h2>
-        <form asp-action="Addcomment" asp-controller="Review" id="formdata" >
+        <form asp-action="Addcomment" asp-controller="Review" id="formdata">
             <input type="hidden" asp-for="MovieId" value="@Model.MovieId" />
             <div class="row">
                 <div class="col-lg-12">
@@ -53,9 +53,9 @@
 </div>
 
 
-    <div class="existing-comments">
-        <h2 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px;">User Reviews</h2>
-        <div class="comments-scroll-wrapper" id="con">
+<div class="existing-comments">
+    <h2 style="color: #fff; border-bottom: 1px solid #333; padding-bottom: 10px;">User Reviews</h2>
+    <div class="comments-scroll-wrapper" id="con">
         @if (Model.MovieReviews.Count() != 0)
         {
             @foreach (var item in Model.MovieReviews)
@@ -64,14 +64,15 @@
                     <div class="comment-header">
                         <span class="comment-author">@item.User.FirstName @item.User.LastName</span>
                         @if (canDelete)
-                        { <button  class="delete-btn theme-btnnn"
-                                data-Movie-id="@item.MovieId"
-                                data-user-id="@item.UserId">
-                            x
-                        </button>
+                        {
+                            <button class="delete-btn theme-btnnn"
+                                      data-Movie-id="@item.MovieId"
+                                      data-user-id="@item.UserId">
+                                x
+                            </button>
                         }
-                      
-                     
+
+
 
                     </div>
                     <div class="comment-rating">
@@ -97,8 +98,8 @@
                 </div>
             }
         }
-        </div>
     </div>
+</div>
 
 
 <script src="~/js/jquery.min.js"></script>
@@ -108,108 +109,115 @@
 
 <script>
 
+            const isAuthenticated = @User.Identity.IsAuthenticated.ToString().ToLower();
+          var connectionHub = new signalR.HubConnectionBuilder().withUrl("/commentHub").build();
 
-      var connectionHub = new signalR.HubConnectionBuilder().withUrl("/commentHub").build();
-
-    connectionHub
-        .start()
-        .then(() => { console.log("Connection Success") })
-        .catch(() => { alert("Connection Failed") });
-
-
-    $("#sendComment").click( () => {
-        const model = {
-            MovieId: $("#MovieId").val(),
-            Comment: $("#Comment").val(),
-            Rate: $("input[name='Rate']:checked").val()
-        };
-        try {
-             $.ajax({
-                url: "/Review/AddComment",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify(model),
-              
-             })
-        } catch (error) {
-            console.error("Failed to submit comment:", error);
-        }
-    });
-    
-          
-    connectionHub.on("ReceiveComment", function (commentData) {
-
-        var commentHtml = `
-            <div class="comment-item" id="${commentData.userId}" >
-                <div class="comment-header">
-                    <span class="comment-author">${commentData.name}</span>
-                        <button  class="delete-btn theme-btnnn"
-                          data-Movie-id="${commentData.movieId}"
-                          data-user-id="${commentData.userId}">
-                                         x
-                                           </button>
-                </div>
-                <div class="comment-rating">
-                    <span class="stars">`;
-
-        for (var i = 1; i <= 5; i++) {
-            if (i <= commentData.rate) {
-                commentHtml += `<span class="stars">★</span>`;
-            } else {
-                commentHtml += `<span class="stars">☆</span>`;
-            }
-        }
-
-        commentHtml += `</span>
-                        <span class="rating-value">${commentData.rate} / 5.0</span>
-                    </div>
-                    <div class="comment-content">
-                        ${commentData.commnet}
-                    </div>
-                </div>`;
-                console.log(commentHtml);
-        $("#con").prepend(commentHtml);
-       $("#Comment").val("");
-        $("input[name='Rate']").prop("checked", false); 
-});
-    //------------------------Delete-------------------------
+        connectionHub
+            .start()
+            .then(() => { console.log("Connection Success") })
+            .catch(() => { alert("Connection Failed") });
 
 
+        $("#sendComment").click( () => {
+                 if (!isAuthenticated) {
+                                       const id =$("#MovieId").val();
+        const returnUrl = encodeURIComponent(`/Movie/MovieDetailPage?id=${id}`);
+            window.location.href = `/Account/Login?ReturnUrl=${returnUrl}`;
 
-    $(document).on('click', '.delete-btn', function() {
-             const button = $(this);
-    const movieId = button.data('movie-id');
-    const userId = button.data('user-id');
-        console.log(movieId);
-        console.log(userId);
+                    return;
+                }
+            const model = {
+                MovieId: $("#MovieId").val(),
+                Comment: $("#Comment").val(),
+                Rate: $("input[name='Rate']:checked").val()
+            };
+            try {
+                 $.ajax({
+                    url: "/Review/AddComment",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(model),
 
-        var model = {
-            MovieId: movieId,
-            UserId: userId
-        }
-        try {
-            $.ajax({
-                url: "/Review/DeleteComment",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify(model),
-            });
-
+                 })
             } catch (error) {
                 console.error("Failed to submit comment:", error);
             }
         });
 
-    connectionHub.on("DeleteComment", function (commentData) {
-        console.log(commentData);
-        if (commentData.flag==true) {
-            var id=commentData.userId;
-           $(`#${id}`).remove();
-        }
-        else {
-            alert("You are not authorized to delete this comment.");
-        }
 
+        connectionHub.on("ReceiveComment", function (commentData) {
+
+            var commentHtml = `
+                <div class="comment-item" id="${commentData.userId}" >
+                    <div class="comment-header">
+                        <span class="comment-author">${commentData.name}</span>
+                            <button  class="delete-btn theme-btnnn"
+                              data-Movie-id="${commentData.movieId}"
+                              data-user-id="${commentData.userId}">
+                                             x
+                                               </button>
+                    </div>
+                    <div class="comment-rating">
+                        <span class="stars">`;
+
+            for (var i = 1; i <= 5; i++) {
+                if (i <= commentData.rate) {
+                    commentHtml += `<span class="stars">★</span>`;
+                } else {
+                    commentHtml += `<span class="stars">☆</span>`;
+                }
+            }
+
+            commentHtml += `</span>
+                            <span class="rating-value">${commentData.rate} / 5.0</span>
+                        </div>
+                        <div class="comment-content">
+                            ${commentData.commnet}
+                        </div>
+                    </div>`;
+                    console.log(commentHtml);
+            $("#con").prepend(commentHtml);
+           $("#Comment").val("");
+            $("input[name='Rate']").prop("checked", false);
     });
+        //------------------------Delete-------------------------
+
+
+
+        $(document).on('click', '.delete-btn', function() {
+                 const button = $(this);
+        const movieId = button.data('movie-id');
+        const userId = button.data('user-id');
+            console.log(movieId);
+            console.log(userId);
+
+            var model = {
+                MovieId: movieId,
+                UserId: userId
+            }
+            try {
+                $.ajax({
+                    url: "/Review/DeleteComment",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(model),
+                });
+
+                } catch (error) {
+                    console.error("Failed to submit comment:", error);
+                }
+            });
+
+        connectionHub.on("DeleteComment", function (commentData) {
+            console.log(commentData);
+            if (commentData.flag==true) {
+                var id=commentData.userId;
+               $(`#${id}`).remove();
+            }
+            else {
+                alert("You are not authorized to delete this comment.");
+            }
+
+        });
 </script>
 

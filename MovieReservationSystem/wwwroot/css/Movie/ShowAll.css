@@ -84,7 +84,7 @@
 }
 
 video {
-    /* position: relative !important; */
+     position: relative !important; 
     max-width: 100%;
     max-height: 100%;
     top: 0px;
@@ -132,7 +132,7 @@ video {
 	--------------------------------*/
 .video-area {
     position: relative;
-    margin-top: 35px;
+    margin-top:9px;
 }
 
 .video-text {
@@ -206,23 +206,27 @@ video {
     }
 
    /* Hero Section */
-   .hero-section {
+
+.hero-section {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    width: 100vw; /* إضافة هذا السطر */
+    margin-left: calc(-50vw + 50%); /* لتعويض الهوامش */
 }
+
 .hero-video {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: 100%;
-    height: 100%;
+    width: 100vw; /* بدل min-width */
+    height: 100vh; /* بدل min-height */
     transform: translate(-50%, -50%);
+    object-fit: cover; /* لتغطية المساحة دون تشويه */
     z-index: -1;
     filter: brightness(80%);
 }
+
     .hero-title {
         font-family: 'Cinzel', serif;
         font-size: 4rem;
@@ -263,10 +267,26 @@ video {
         transition: all 0.3s ease;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
+
+.btn-explore2 {
+    background-color: #eb315a;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
     
     .btn-explore:hover {
-        /* border-color: #eb3159af; */
         border: #eb315a solid 2px;
-        /* transform: translateY(-3px); */
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     }
+
+
+.btn-explore2:hover {
+    border: #eb315a solid 2px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
