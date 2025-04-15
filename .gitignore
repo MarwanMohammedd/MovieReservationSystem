@@ -1,1 +1,11 @@
-.vs/ 
+.vs/
+*.user
+*.suo
+*.cache
+
+# Build files
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
