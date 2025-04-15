@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieReservationSystem.DataAccess.Data;
 using MovieReservationSystem.DataAccess.Repository;
+using MovieReservationSystem.DataAccess.Repository.TheaterRepository;
+using MovieReservationSystem.DataAccess.Repository.TicketRepository;
 using MovieReservationSystem.DataAccess.UnitOfWork;
 using MovieReservationSystem.Hubs;
 using MovieReservationSystem.Model.Models;
@@ -29,6 +31,8 @@ namespace MovieReservationSystem
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
             builder.Services.AddScoped<IMovieSchedleRepository, MovieSchedleRepository>();
             builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+            builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+            builder.Services.AddScoped<TheaterRepository, TheaterRepository>();
             builder.Services.AddSignalR();
 
             builder.Services.AddAutoMapper(typeof(Program));
@@ -39,7 +43,9 @@ namespace MovieReservationSystem
 
             builder.Services.ConfigureApplicationCookie(option => { });
 
-            builder.Services.AddAuthentication().AddGoogle(options =>{});
+            builder.Services.AddAuthentication().AddGoogle(options => {
+                
+            });
 
             var app = builder.Build();
 

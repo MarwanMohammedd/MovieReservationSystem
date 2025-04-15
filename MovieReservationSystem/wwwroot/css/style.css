@@ -26,38 +26,13 @@ Description: Online Movie,Vedio and TV Show HTML Template
 /*----------------------------------
 --------- THEME DEFAULT CSS --------
 ----------------------------------*/
-/* أنماط الـ navbar الأساسية */
-#mainNavbar {
-    background-color: transparent !important;
-    transition: background-color 0.3s ease-in-out;
-    padding: 5px 0;
-}
-
-    /* أنماط الـ navbar عند التمرير */
-    #mainNavbar.scrolled {
-        background-color: rgba(18, 18, 18, 0.95) !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 5px 0;
-    }
-
-        /* تحسينات إضافية للروابط */
-        #mainNavbar.scrolled .nav-link {
-            color: #fff !important;
-        }
-
-        #mainNavbar.scrolled .navbar-brand img {
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900');
 body {
     line-height: 24px;
     font-size: 14px;
     color: #b6b7b9;
-    background-color: #13151f;
-    font-family: 'Poppins', sans-serif;
+	background-color: #13151f;
+	font-family: 'Poppins', sans-serif;
     font-weight: 400;
     position: relative;
 }
@@ -584,7 +559,6 @@ hr {
 .single-portfolio {
     margin-top: 50px;
 }
-/*
 .video-area,
 .single-portfolio-img {
 	overflow: hidden;
@@ -624,10 +598,7 @@ hr {
 /*----------------------------------
 -------- video AREA CSS START -------
 ------------------------------------*/
-.video-area {
-/*    position: relative;*/
-	margin-top: 35px;
-}
+
 
 .popup-youtube i:hover {
     color: #fece50;
@@ -652,22 +623,26 @@ hr {
     right: 0;
 }
 
-.video-text {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: rgba(19,21,31,0.6);
-    padding: 20px 35px;
-    width: 100%;
-}
-
-.video-text .review {
-    margin-bottom: 0;
-}
 /*----------------------------------
 --------- video AREA CSS END --------
 -----------------------------------*/
 
+.btn-explore2 {
+    background-color: #eb315a;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.btn-explore2:hover {
+    border: #eb315a solid 2px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
 /*----------------------------------
 -------- news AREA CSS START -------
 ------------------------------------*/
@@ -750,10 +725,128 @@ hr {
 /*----------------------------------
 --------- footer AREA CSS START --------
 -----------------------------------*/
-/*.footer {
+/*----------------------------------
+--------- footer AREA CSS START --------
+-----------------------------------*/
+.footer {
     background: url('../img/footer-bg.png') no-repeat bottom center / cover;
-    position: relative !important;
+    position: relative;
     padding: 90px 0 30px;
+    color: #fff !important; /* إضافة هذا السطر */
+    z-index: 10; /* التأكد من ظهوره فوق العناصر الأخرى */
+}
+
+    .footer::before {
+        position: absolute;
+        background: #13151f;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+    }
+
+    /* تحسين النصوص داخل الفوتر */
+    .footer a,
+    .footer h4,
+    .footer h6,
+    .footer p,
+    .footer li {
+        color: #fff !important;
+        opacity: 1 !important;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    }
+
+.widget h4, .widget img {
+    margin-bottom: 40px;
+    color: #eb315a !important; /* لجعل العناوين بارزة */
+}
+
+.widget ul li {
+    margin-top: 15px;
+}
+
+.widget h6 {
+    margin-top: 18px;
+}
+
+.widget {
+    margin-bottom: 40px;
+    position: relative; /* للتأكد من أن المحتوى يظهر فوق الخلفية */
+    z-index: 2;
+}
+/* تحسين قسم حقوق النشر */
+.copyright {
+    padding-top:4px;
+    position: relative;
+    z-index: 2;
+}
+
+.copyright-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.copyright p,
+.copyright a {
+    color: #fff !important;
+    font-size: 14px;
+    margin: 0;
+    opacity: 1 !important;
+    text-shadow: none;
+}
+.widget button {
+    background: transparent;
+    color: #eb315a;
+    border: none;
+    padding: 0;
+}
+
+    .copyright a.scrollToTop {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 15px;
+        background: rgba(235, 49, 90, 0.7);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        margin-left: auto;
+    }
+
+        .copyright a.scrollToTop:hover {
+/*            background: rgba(235, 49, 90, 0.7);*/
+            transform: translateY(-2px);
+        }
+
+        .copyright a.scrollToTop i {
+            font-size: 12px;
+        }
+
+/* للشاشات الكبيرة */
+@media (min-width: 992px) {
+    .copyright-content {
+        justify-content: space-between;
+    }
+
+    .text-lg-left {
+        text-align: left !important;
+    }
+
+    .text-lg-right {
+        text-align: right !important;
+    }
+}
+/*----------------------------------
+--------- footer AREA CSS END --------
+-----------------------------------*/
+/*
+.footer {
+	background: url('../img/footer-bg.png') no-repeat bottom center / cover;
+    position: relative !important;
+	padding: 90px 0 30px;
 }
 .footer::before {
     position: absolute;
@@ -794,118 +887,6 @@ hr {
 .copyright {
     padding-top: 25px;
 }*/
-/* تحسينات الـ Footer النهائية */
-
-.footer {
-    background: #13151f !important; /* إجبارية للون الخلفية */
-    padding: 60px 0 30px !important;
-    position: relative !important; /* إلغاء الـ absolute */
-    z-index: 1;
-}
-
-    .footer::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../img/footer-bg.png') no-repeat bottom center/cover;
-        opacity: 0.1;
-        z-index: -1;
-    }
-
-    /* تحسينات الشبكة */
-    .footer .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -15px;
-    }
-
-    .footer .col-lg-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-        padding: 0 15px;
-        margin-bottom: 30px;
-    }
-
-/* تجاوبية الأعمدة */
-@media (max-width: 992px) {
-    .footer .col-lg-3 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer .col-lg-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-/* تحسينات المحتوى */
-.widget {
-    margin-bottom: 30px;
-}
-
-    .widget h4 {
-        color: #eb315a;
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .widget p, .widget h6 {
-        color: #ccc;
-        line-height: 1.6;
-    }
-
-    .widget ul li a {
-        color: #aaa;
-        transition: color 0.3s;
-    }
-
-        .widget ul li a:hover {
-            color: #eb315a;
-        }
-
-    /* تحسينات حقول الإدخال */
-    .widget input[type="text"] {
-        width: 100%;
-        padding: 12px;
-        background: rgba(255,255,255,0.1);
-        border: 1px solid #333;
-        color: #fff;
-        margin-bottom: 10px;
-    }
-
-    .widget button {
-        background: #eb315a !important;
-        color: #fff !important;
-        padding: 12px 25px !important;
-        border: none !important;
-        cursor: pointer;
-        transition: background 0.3s;
-    }
-
-        .widget button:hover {
-            background: #9a1a1a !important;
-        }
-
-/* حقوق النشر */
-.copyright {
-    border-top: 1px solid #333;
-    padding-top: 25px;
-    margin-top: 30px;
-}
-
-.copyright-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #777;
-}
-
 /*----------------------------------
 --------- footer AREA CSS END --------
 -----------------------------------*/
@@ -929,7 +910,7 @@ hr {
 }
 .transformers-box {
     padding: 35px;
-    box-shadow: 0 0 20px #eb315a;
+    box-shadow: 0 0 20px #000000;
     position: relative;
 }
 

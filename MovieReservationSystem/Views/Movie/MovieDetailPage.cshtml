@@ -1,6 +1,146 @@
 ﻿@model MovieDetailPageVM
 
+<style>
+	.ticket-table-seat td {
+		padding: 10px;
+		border: 1px solid #ccc;
+		text-align: center;
+	}
 
+		.ticket-table-seat td.available {
+			background-color: #dff0d8; /* light green */
+			cursor: pointer;
+		}
+
+		.ticket-table-seat td.unavailable {
+			background-color: #f2dede; /* light red */
+			pointer-events: none;
+		}
+
+		.ticket-table-seat td.selected {
+			background-color: #d9edf7; /* light blue */
+		}
+
+	.ticket-table-seat td {
+		padding: 15px;
+		margin: 5px;
+		border: 1px solid #ccc;
+		text-align: center;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		border-radius: 5px;
+		font-weight: bold;
+		transition: background-color 0.2s ease;
+	}
+
+		.ticket-table-seat td.selectable {
+			background-color: #e9f7ef;
+		}
+
+			.ticket-table-seat td.selectable:hover {
+				background-color: #c8e6c9; /* Light green on hover */
+			}
+
+		.ticket-table-seat td.unavailable {
+			background-color: #f5c6cb;
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+
+		.ticket-table-seat td.selected {
+			background-color: #bee5eb;
+			border: 2px solid #17a2b8;
+		}
+
+	.legend {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border: 1px solid #ccc;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+
+	.available-box {
+		background-color: #e9f7ef;
+	}
+
+	.unavailable-box {
+		background-color: #f5c6cb;
+	}
+
+	.selected-box {
+		background-color: #bee5eb;
+	}
+
+	.selected-seats {
+		margin-top: 15px;
+		font-size: 16px;
+		color: #333;
+	}
+
+</style>
+
+<div class="buy-ticket">
+	<div class="container">
+		<div class="buy-ticket-area">
+			<a href="#"><i class="icofont icofont-close"></i></a>
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="buy-ticket-box">
+						<h4>Buy Tickets</h4>
+						<h5>Seat</h5>
+						<h6>Screen</h6>
+
+						<div class="ticket-box-table">
+
+							<table class="ticket-table-seat">
+								<tr>
+									@foreach (var seat in Model.TheaterSeats)
+									{
+										var seatClass = seat.IsReserved ? "unavailable" : "selectable";
+										<td class="ticket-table-seat @seatClass" data-id="@seat.ID">
+											@seat.SeatNumber
+										</td>
+									}
+								</tr>
+							</table>
+
+						</div>
+
+						<div class="ticket-box-available">
+							<span class="legend available-box"></span> Available
+							<br />
+							<span class="legend unavailable-box"></span> Unavailable
+							<br />
+							<span class="legend selected-box"></span> Selected
+						</div>
+
+						<div class="selected-seats">
+							<h6>Selected Seats:</h6>
+							<div id="selectedSeatList">None</div>
+						</div>
+						<br />
+						<button class="theme-btn" id="submitSeats">Submit</button>
+					</div>
+				</div>
+
+				<div class="col-lg-3 offset-lg-1">
+					<div class="buy-ticket-box mtr-30">
+						<h4>Your Information</h4>
+						<ul>
+							<li><p>Theater</p><span>@Model.TheaterName</span></li>
+							<li><p>TIME</p><span>2018.07.09 20:40</span></li>
+							<li><p>Movie name</p><span>@Model.Title</span></li>
+							<li><p>Price</p><span>20$</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <!-- breadcrumb area start -->
 <section class="breadcrumb-area">
 	<div class="container">
@@ -132,3 +272,78 @@
 		</div>
 	</div>
 </section>
+
+<script>
+		document.addEventListener('DOMContentLoaded', function () {
+		var selectedSeats = [];
+
+		// Handle seat selection
+		document.querySelectorAll('.ticket-table-seat td.selectable').forEach(seat => {
+			seat.addEventListener('click', function () {
+				const seatId = parseInt(this.getAttribute('data-id'));
+
+				if (selectedSeats.includes(seatId)) {
+					selectedSeats.splice(selectedSeats.indexOf(seatId), 1);
+					this.classList.remove('selected');
+				} else {
+					selectedSeats.push(seatId);
+					this.classList.add('selected');
+				}
+
+				document.getElementById("selectedSeatList").innerText = selectedSeats.join(', ');
+			});
+		});
+
+		// Send POST request
+		document.getElementById("submitSeats").addEventListener('click', function () {
+			var movieId = @Model.ID;
+			var theaterId = @Model.TheaterId;
+
+			console.log( typeof selectedSeats);
+			console.log( movieId);
+			console.log( theaterId);
+			console.log(selectedSeats);
+
+			if (selectedSeats.length == 0) {
+				alert("Please select at least one seat.");
+				return;
+			}
+
+			window.location.href = `/Ticket/Create?movieId=${movieId}&theaterId=${theaterId}&seatNumbers=${selectedSeats.join(",")}`;
+
+
+			// fetch('/Ticket/Create', {
+			// 	method: 'POST',
+			// 	headers: {
+			// 		'Content-Type': 'application/json'
+			// 	},
+			// 	body: JSON.stringify({
+			// 		seatNumbers: selectedSeats,
+			// 		movieId: movieId,
+			// 		theaterId: theaterId
+			// 	})
+			// })
+			// 	.then(response => {
+			// 		return response.text();
+			// 	})
+			// 	.then(data => {
+			// 		alert("Booking successful!");
+			// 		console.log(data);
+			// 		Optionally redirect or show success UI
+			// 		document.open();
+			// 		document.write(data);
+			// 		document.close();
+			// 		console.log("Done");
+			// 	})
+			// 	.catch(error => {
+			// 		console.error("Error:", error);
+			// 		alert("Something went wrong: " + error.message);
+			// 	});
+		});
+	});
+
+	$('.theme-btn').on('click', function () {
+		$('.buy-ticket').show();
+		return false;
+	});
+</script>

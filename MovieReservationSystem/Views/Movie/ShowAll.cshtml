@@ -1,256 +1,34 @@
-﻿
-<style>
-	.ghost-btn {
-		position: relative;
-		background: transparent;
-		color: #fff;
-		border: 1px solid rgba(255, 255, 255, 0.3);
-		padding: 8px 25px;
-		border-radius: 20px;
-		font-weight: 500;
-		transition: all 0.4s ease;
-		overflow: hidden;
-		z-index: 1;
-	}
-	
+﻿@model IEnumerable<MovieAllVM>
 
-		.ghost-btn .hover-effect {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			background: rgba(178, 34, 34, 0.2);
-			transition: width 0.4s ease;
-			z-index: -1;
-		}
+<link rel="stylesheet" type="text/css" href="~/css/Movie/ShowAll.css" media="all" />
+<link rel="stylesheet" type="text/css" href="~/css/MoviePagenation.css" media="all" />
 
-		.ghost-btn:hover {
-			border-color: rgba(178, 34, 34, 0.5);
-			color: #fff;
-		}
+<section class="hero-area" id="home">
 
-			.ghost-btn:hover .hover-effect {
-				width: 100%;
-			}
+<section class="hero-section">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/8262689/8262689-uhd_2732_1440_25fps.mp4" type="video/mp4">
+                @* <source src="~/assets/Video/4.mp4" type="video/mp4"> *@
+                Your browser does not support the video tag.
+            </video>
 
-	/* زر Show All */
-	.show-all-btn {
-		background: rgb(235, 49, 90);
-		color: #fff;
-		border: 1px solid rgb(235, 49, 120);
-		padding: 12px 35px;
-		border-radius: 30px;
-		font-size: 1.1em;
-		transition: all 0.4s ease;
-		display: inline-flex;
-		align-items: center;
-		gap: 10px;
-	}
-
-		.show-all-btn i {
-			transition: transform 0.3s ease;
-		}
-
-		.show-all-btn:hover {
-			/* background: rgba(178, 34, 34, 0.2); */
-			transform: translateY(-3px);
-		}
-
-			.show-all-btn:hover i {
-				transform: translateX(5px);
-			}
-
-	/* تحسينات عامة */
-	.portfolio-content {
-		padding: 20px;
-	}
-
-	video {
-		/* position: relative !important; */
-		max-width: 100%;
-		max-height: 100%;
-		top: 0px;
-		left: 0px;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		transform: scale(1.2, 1.2);
-		pointer-events: none;
-	}
-
-	.video-overlay-text {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		/color: #fff;
-		z-index: 2;
-		padding: 30px 50px;
-		border-radius: 15px;
-		box-shadow: none;
-		animation: fadeIn 1s ease-in-out;
-		
-	}
-
-		.video-overlay-text h1 {
-			font-size: 3.5rem;
-			font-weight: bold;
-			margin-bottom: 10px;
-			color: #fff; /* اللون الأبيض الزاهي */
-			text-shadow: 4px 4px 15px rgba(235, 49, 90,0.9), 0 0 25px rgba(235, 49, 90,0.5); /* ظل أحمر قوي مع إضاءة مشعة */
-		}
-
-		.video-overlay-text p {
-			font-size: 1.5rem;
-			color: #fff; /* اللون الأبيض الزاهي */
-			text-shadow: 2px 2px 10px rgba(235, 49, 90,0.9), 0 0 20px rgba(235, 49, 90,0.5)); /* ظل أحمر قوي مع تأثير الإضاءة */
-		}
-
-
-
-
-	/* Animation */
-	@@keyframes fadeIn {
-		from
-
-	{
-		opacity: 0;
-		transform: translate(-50%, -60%);
-	}
-
-	to {
-		opacity: 1;
-		transform: translate(-50%, -50%);
-	}
-
-	}
-
-	/*-------------------------------
-	-------- video AREA CSS START ---
-	--------------------------------*/
-	.video-area {
-		position: relative;
-		margin-top: 35px;
-	}
-
-	.video-text {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		background: rgba(19, 21, 31, 0.6);
-		padding: 20px 35px;
-		width: 100%;
-		transform: translateY(20px);
-		opacity: 0;
-		transition: all 0.5s ease-in-out;
-	}
-
-	.video-area:hover .video-text {
-		transform: translateY(0);
-		opacity: 1;
-	}
-
-	.video-text h2,
-	.video-text h4,
-	.video-text p {
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-		transition: all 0.3s ease;
-	}
-
-		.video-text h2:hover {
-			color: #fece50;
-			transform: scale(1.02);
-		}
-
-	.video-text h2 {
-		animation: fadeInUp 0.8s ease forwards;
-	}
-
-	.video-text h4 {
-		animation: fadeInUp 0.8s ease 0.2s forwards;
-	}
-
-	.video-text p {
-		animation: fadeInUp 0.8s ease 0.4s forwards;
-	}
-
-	/* تأثير زر التشغيل */
-	.popup-youtube i {
-		width: 60px;
-		height: 60px;
-		line-height: 60px;
-		color: #fff;
-		border: 2px solid #fff;
-		border-radius: 50%;
-		text-align: center;
-		font-size: 18px;
-		display: inline-block;
-		transition: all 0.4s;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		left: 0;
-		right: 0;
-		box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
-		animation: pulse 2s infinite;
-	}
-
-		.popup-youtube i:hover {
-			color: #fece50;
-			border: 2px solid #fece50;
-			transform: scale(1.1);
-			animation: none;
-		}
-
-</style>
-<section  class="hero-area" id="home">
-	@* <div class="position-relative"> *@
-	@* 	<video src="./assets/1.mp4" *@
-	@* 		   autoplay *@
-	@* 		   muted *@
-	@* 		   loop *@
-	@* 		   playsinline *@
-	@* 		   class="w-100 h-100 object-fit-cover" *@
-	@* 		   aria-label="Promotional video showcasing our product"> *@
-	@* 		Your browser does not support the video tag. *@
-	@* 		<a href="./~/videoplayback.webm">Download the video</a>. *@
-	@* 	</video> *@
-	@* 	<div class="position-absolute top-50 start-50 translate-middle text-danger text-center"> *@
-	@* 		<h1 class="display-3">WELCOME TO THE REALM OF SHADOWS</h1> *@
-	@* 		<p class="lead text-light">Experience innovation like never before.</p> *@
-	@* 	</div> *@
-	<div class="video-area">
-		<video src="https://videos.pexels.com/video-files/8262689/8262689-uhd_2732_1440_25fps.mp4" autoplay muted loop class="w-100 h-100 object-fit-cover" style="filter: brightness(65%);"></video>
-
-		<!-- الكلام في وسط الفيديو -->
-		<div class="video-overlay-text ">
-			<h1>WELCOME TO THE REALM OF SHADOWS</h1>
-			<p>Experience innovation like never before.</p>
-		</div>
-	</div>
-
+            <div class="hero-content">
+                <h1 class="hero-title">RapidReels</h1>
+                <p class="hero-subtitle">Where speed meets the magic of cinema</p>
+                <a aps-controller="Movie" asp-action="MoviePagenation" class="btn btn-explore">
+                    Explore Movies <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </section>
 
 </section>
 
 <section class="portfolio-area pt-60">
 	<div class="container">
-		<div class="row flexbox-center">
-			<div class="col-lg-6 text-center text-lg-left">
-				<div class="section-title">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title pb-20">
 					<h1><i class="icofont icofont-movie"></i> Spotlight This Month</h1>
-				</div>
-			</div>
-			<div class="col-lg-6 text-center text-lg-right">
-				<div class="portfolio-menu">
-					<ul>
-						<li data-filter="*" class="active">Latest</li>
-						<li data-filter=".soon">Coming Soon</li>
-						<li data-filter=".top">Top Rated</li>
-						<li data-filter=".released">Recently Released</li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -259,198 +37,101 @@
 			<div class="col-lg-12">
 				<div class="row portfolio-item">
 					<!-- Card 1 -->
-					<div class="col-md-3 col-sm-6 soon">
-						<div class="single-portfolio">
-							<div class="single-portfolio-img">
-								<img src="~/img/portfolio/portfolio3.png" alt="portfolio" />
-								<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-									<i class="icofont icofont-ui-play"></i>
-								</a>
-							</div>
-							<div class="portfolio-content">
-								<h2>The Lost City of Z</h2>
-								<div class="review">
-									<div class="author-review">
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-									</div>
-									<h4>180k voters</h4>
+					@foreach (var movie in Model)
+					{
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 ">
+							<div class="single-portfolio ">
+								<div class="single-portfolio-img">
+									<img src="~/Images/@movie.ImagePath" alt="portfolio" />
+									<a asp-action="MovieDetailPage" asp-route-id="@movie.ID"></a>
 								</div>
-								<div class="text-center my-3">
-									@* <button class="ghost-btn show-all-btn"> *@
-									@* 	<span>Details</span> *@
-									@* 	<div class="hover-effect"></div> *@
-									@* </button> *@
-								</div>
-							</div>
-						</div>
-					</div>
+								<div class="portfolio-content">
+									<a asp-action="MovieDetailPage" asp-route-id="@movie.ID">
+										<h4 class="title">@movie.Title</h4>
+									</a>
+									<div class="review mb-2">
+										<div class="author-review">
+											@for (int i = 1; i <= 5; i++)
+											{
+												if (i <= movie.RateAvg)
+												{
 
-					<!-- Card 2 -->
-					<div class="col-md-3 col-sm-6 top released">
-						<div class="single-portfolio">
-							<div class="single-portfolio-img">
-								<img src="~/img/portfolio/portfolio4.png" alt="portfolio" />
-								<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-									<i class="icofont icofont-ui-play"></i>
-								</a>
-							</div>
-							<div class="portfolio-content">
-								<h2>Beast Beauty</h2>
-								<div class="review">
-									<div class="author-review">
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-									</div>
-									<h4>180k voters</h4>
-								</div>
-								<div class="text-center my-3">
-									@* <button class="ghost-btn show-all-btn"> *@
-									@* 	<span>Details</span> *@
-									@* 	<div class="hover-effect"></div> *@
-									@* </button> *@
-								</div>
-							</div>
-						</div>
-					</div>
+													<span style="font-size: 24px;">&#9733;</span>
 
-					<!-- Card 3 -->
-					<div class="col-md-3 col-sm-6 released">
-						<div class="single-portfolio">
-							<div class="single-portfolio-img">
-								<img src="~/img/portfolio/portfolio5.png" alt="portfolio" />
-								<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-									<i class="icofont icofont-ui-play"></i>
-								</a>
-							</div>
-							<div class="portfolio-content">
-								<h2>In The Fade</h2>
-								<div class="review">
-									<div class="author-review">
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-									</div>
-									<h4>180k voters</h4>
-								</div>
-								<div class="text-center my-3">
-									<button class="ghost-btn show-all-btn">
-										<span>Details</span>
-										<div class="hover-effect"></div>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
+												}
+												else
+												{
 
-					<!-- Card 4 -->
-					<div class="col-md-3 col-sm-6 soon top">
-						<div class="single-portfolio">
-							<div class="single-portfolio-img">
-								<img src="~/img/portfolio/portfolio6.png" alt="portfolio" />
-								<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-									<i class="icofont icofont-ui-play"></i>
-								</a>
-							</div>
-							<div class="portfolio-content">
-								<h2>Last Hero</h2>
-								<div class="review">
-									<div class="author-review">
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
-										<i class="icofont icofont-star"></i>
+
+													<span style="font-size: 24px;">&#9734;</span>
+												}
+
+											}
+										</div>
+										<h4>@movie.RateAvg voters</h4>
 									</div>
-									<h4>180k voters</h4>
-								</div>
-								<div class="text-center my-3">
-									<button class="ghost-btn show-all-btn">
-										<span>Details</span>
-										<div class="hover-effect"></div>
-									</button>
+									<a asp-action="MovieDetailPage" asp-route-id="@movie.ID" class="btn btn-explore2">
+										Show Details
+									</a>
 								</div>
 							</div>
 						</div>
-					</div>
+					}
+
 				</div>
 
-				<!-- Show All Button -->
-				<div class="text-center mt-5">
-					<button class="show-all-btn ghost-btn">
-						Show All Movies
-						<i class="icofont icofont-arrow-right"></i>
-					</button>
-				</div>
+				
 			</div>
 		</div>
 	</div>
 </section>
 
-	<!-- video section start -->
-	<section class="video ptb-90">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title pb-20">
-						<h1><i class="icofont icofont-film"></i> Trailers & Videos</h1>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<div class="row">
-				<div class="col-md-9">
-					<div class="video-area">
-						<img src="~/img/video/video1.png" alt="video" />
-						<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-							<i class="icofont icofont-ui-play"></i>
-						</a>
-						<div class="video-text">
-							<h2>Angle of Death</h2>
-							<div class="review">
-								<div class="author-review">
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-								</div>
-								<h4>180k voters</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="row">
-						<div class="col-md-12 col-sm-6">
-							<div class="video-area">
-								<img src="~/img/video/video2.png" alt="video" />
-								<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-									<i class="icofont icofont-ui-play"></i>
-								</a>
-							</div>
-						</div>
-						<div class="col-md-12 col-sm-6">
-							<div class="video-area">
-								<img src="~/img/video/video3.png" alt="video" />
-								<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-									<i class="icofont icofont-ui-play"></i>
-								</a>
-							</div>
-						</div>
-					</div>
+
+<section class="video ptb-90">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title pb-20">
+					<h1><i class="icofont icofont-film"></i> Trailers & Videos</h1>
 				</div>
 			</div>
 		</div>
-	</section>
+		<hr />
+		<div class="row">
+			<div class="col-md-9">
+				<div class="video-area">
+					<img src="~/assets/maxresdefault.jpg" alt="Batman" />
+					<a href="https://www.youtube.com/watch?v=u1S1W5ED1ng" class="popup-youtube">
+						<i class="icofont icofont-ui-play"></i>
+					</a>
+					<div class="video-text">
+						<h2>The Batman 2 (2026)</h2>
 
-	
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-12 col-sm-6">
+						<div class="video-area">
+							<img src="https://www.slashfilm.com/img/gallery/final-interstellar-trailer/intro-import.jpg"
+								alt="Interstellar trailer" />
+							<a href="https://www.youtube.com/watch?v=2LqzF5WauAw" class="popup-youtube">
+								<i class="icofont icofont-ui-play"></i>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-6">
+						<div class="video-area">
+							<img src="~/assets/sp2.jpg" alt="SpiderMan trailer" />
+							<a href="https://www.youtube.com/watch?v=iaD2f2O9wGk" class="popup-youtube">
+								<i class="icofont icofont-ui-play"></i>
+							</a>
+						</div>
+					</div>
 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

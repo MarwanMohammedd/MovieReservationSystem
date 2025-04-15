@@ -1,5 +1,6 @@
 using MovieReservationSystem.DataAccess.Data;
 using MovieReservationSystem.DataAccess.Repository;
+using MovieReservationSystem.DataAccess.Repository.TheaterRepository;
 
 namespace MovieReservationSystem.DataAccess.UnitOfWork
 {
@@ -11,11 +12,13 @@ namespace MovieReservationSystem.DataAccess.UnitOfWork
         public IMovieSchedleRepository MovieSchedle { get; }
         public IReviewRepository Review { get; }
 
-        public UnitOfWork(ApplicationDBContext applicationDBContext, IMovieRepository movieRepository, IMovieSchedleRepository movieSchedleRepository, IReviewRepository review)
+        public TheaterRepository Theater { get; }
+
+        public UnitOfWork(ApplicationDBContext applicationDBContext, IMovieRepository movieRepository, IMovieSchedleRepository movieSchedleRepository, IReviewRepository review, TheaterRepository theaterRepository)
         {
             this.applicationDBContext = applicationDBContext;
             Movie = movieRepository;
-            
+            Theater = theaterRepository;
             MovieSchedle = movieSchedleRepository;
             Review = review;
         }

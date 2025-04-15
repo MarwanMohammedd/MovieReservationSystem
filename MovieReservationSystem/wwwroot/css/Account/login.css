@@ -1,12 +1,12 @@
 body {
-    background-color: #121212;
+    background-color: #0b0c12;
     font-family: 'Playfair Display', serif;
     color: #fff;
     margin: 0px;
 }
 
 .bg-blur {
-    background: rgba(33, 33, 33, 0.9);
+    background: #13151f;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
@@ -19,21 +19,21 @@ body {
     color: #fff;
 }
 
-.form-control:focus {
-    background-color: rgba(75, 75, 75, 0.95);
-    color: #fff;
-    border-color: #dc3545;
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
-}
+    .form-control:focus {
+        background-color: rgba(75, 75, 75, 0.95);
+        color: #fff;
+        border-color: #dc3545;
+        box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    }
 
 .btn-primary {
-    background-color: #dc3545;
+    background-color: #eb3150;
     border: none;
 }
-
-.btn-primary:hover {
-    background-color: #c82333;
-}
+    .btn-primary:hover {
+        background-color: #13151f;
+        border: 1px solid #eb3150;
+    }
 
 .google-btn {
     background: transparent;
@@ -70,11 +70,11 @@ img.google-icon {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.form-check-input:checked {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
+    .form-check-input:checked {
+        background-color: #eb3150;
+        border-color: #eb3150;
+    }
 
 .text-danger {
-    color: #dc3545 !important;
+    color: #eb3150 !important;
 }

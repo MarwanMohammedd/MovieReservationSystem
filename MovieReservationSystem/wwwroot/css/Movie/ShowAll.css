@@ -84,7 +84,8 @@
 }
 
 video {
-    /* position: relative !important; */
+
+     position: relative !important; 
     max-width: 100%;
     max-height: 100%;
     top: 0px;
@@ -102,7 +103,7 @@ video {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    /color: #fff;
+    color: #fff;
     z-index: 2;
     padding: 30px 50px;
     border-radius: 15px;
@@ -121,14 +122,14 @@ video {
     .video-overlay-text p {
         font-size: 1.5rem;
         color: #fff; /* اللون الأبيض الزاهي */
-        text-shadow: 2px 2px 10px rgba(235, 49, 90,0.9), 0 0 20px rgba(235, 49, 90,0.5)); /* ظل أحمر قوي مع تأثير الإضاءة */
+        text-shadow: 2px 2px 10px rgba(235, 49, 90,0.9), 0 0 20px rgba(235, 49, 90,0.5); /* ظل أحمر قوي مع تأثير الإضاءة */
     }
 
 
 
-
 /* Animation */
-@@keyframes fadeIn {
+
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translate(-50%, -60%);
@@ -145,7 +146,7 @@ video {
 	--------------------------------*/
 .video-area {
     position: relative;
-    margin-top: 35px;
+    margin-top:9px;
 }
 
 .video-text {
@@ -217,3 +218,90 @@ video {
         transform: scale(1.1);
         animation: none;
     }
+
+
+   /* Hero Section */
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw; /* إضافة هذا السطر */
+    margin-left: calc(-50vw + 50%); /* لتعويض الهوامش */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw; /* بدل min-width */
+    height: 100vh; /* بدل min-height */
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* لتغطية المساحة دون تشويه */
+    z-index: -1;
+    filter: brightness(80%);
+}
+
+    .hero-title {
+        font-family: 'Cinzel', serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: #eb315a;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        animation: flicker 3s infinite alternate;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--white);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        margin-bottom: 30px;
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+     
+    .btn-explore {
+        background-color: #eb315a;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+.btn-explore2 {
+    background-color: #eb315a;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+    
+    .btn-explore:hover {
+        border: #eb315a solid 2px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+
+.btn-explore2:hover {
+    border: #eb315a solid 2px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}

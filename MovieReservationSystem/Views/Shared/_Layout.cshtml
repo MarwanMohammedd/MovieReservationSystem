@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Moviepoint - Online Movie,Vedio and TV Show HTML Template</title>
+	<title>RapidReels</title>
 	<!-- Favicon Icon -->
 	<link rel="icon" type="image/png" href="~/img/favcion.png" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 	<!-- Slick nav CSS -->
 	<link rel="stylesheet" type="text/css" href="~/css/slicknav.min.css" media="all" />
@@ -22,357 +22,113 @@
 	<link rel="stylesheet" type="text/css" href="~/css/style.css" media="all" />
 	<!-- Responsive CSS -->
 	<link rel="stylesheet" type="text/css" href="~/css/responsive.css" media="all" />
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-	<!-- Page loader -->
-	<div id="preloader"></div>
-	<!-- header section start -->
-	<header class="header"> 
-	 	<div class="container"> 
-	 		<div class="header-area"> 
-	 			<div class="logo"> 
-	 				<a asp-controller="Movie"  asp-action="ShowAll"><img src="~/img/logo.png" alt="logo" /></a> 
-	 			</div> 
-	 			<div class="header-right"> 
-	 				<form asp-action="MoviePagenation" asp-controller="Movie" method="get"> 
-	 					<input type="text" name="movieName" /> 
-	 					<input type="hidden" name="type" value="MovieSearch" /> 
-	 					<button><i class="icofont icofont-search"></i></button> 
-	 				</form> 
-					<ul> 
- 					<li><a href="#">Welcome Guest!</a></li> 
-	 					<li><a class="login-popup" href="#">Login</a></li> 
-	 				</ul> 
-	 			</div> 
-				<div class="menu-area"> 
-					<div class="responsive-menu"></div> 
-	 				<div class="mainmenu"> 
-	 					<ul id="primary-menu"> 
-	 						<li><a class="active" asp-controller="Movie" asp-action="ShowAll" >Home</a></li> 
-	 						<li><a asp-controller="Movie" asp-action="MoviePagenation" asp-route-type="MovieLastest">Movies</a></li> 
-	 						<li><a asp-controller="Movie" asp-action="MovieTopRated">Top Movies</a></li> 
-	 						<li> 
-	 							<a href="#">Pages <i class="icofont icofont-simple-down"></i></a> 
-	 							<ul> 
-	 								<li><a asp-controller="Movie" asp-action="MovieDetailPage" asp-route-id="1">Movie Details</a></li> 
-	 							</ul> 
-							</li> 
-	 						<li><a class="theme-btn" href="#"><i class="icofont icofont-ticket"></i> Tickets</a></li>
-						</ul> 
-	 				</div> 
-	 			</div> 
-	 		</div> 
-	 	</div>
-	 </header>
+	<header class="header">
+		<nav class="navbar navbar-expand-sm navbar-dark fixed-top" id="mainNavbar">
+			<div class="container-fluid">
+				<!-- Logo -->
+				<a class="navbar-brand" asp-controller="Movie" asp-action="ShowAll">
+					<svg width="50" height="50" viewBox="0 0 567 567" fill="none">
+						<path
+							d="M324 123.9V280.1C367.1 280.1 402.1 245.1 402.1 202C402 158.9 367.1 123.9 324 123.9ZM215.5 123.9H134V280.1H215.6C258.7 280.1 293.7 245.1 293.7 202C293.6 158.9 258.7 123.9 215.5 123.9ZM485.9 358.1V322.5C468.8 345.5 447 364.7 421.8 378.7L485.9 491.9V423.9L566.9 566.9H388L324 453.8V566.9H284.9L192.6 404H134V566.9H0V0H215.5C255.4 0 292.6 11.6 323.9 31.6V0C390.2 0 449 32 485.9 81.3V45.8C531.1 82.8 559.9 139.1 559.9 202C559.9 265 531.1 321.1 485.9 358.1Z"
+							fill="white"></path>
+					</svg>
+				</a>
+				<!-- Toggler Button for Mobile -->
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-	@* <nav class="navbar navbar-expand-sm navbar-dark fixed-top" id="mainNavbar">
-		<div class="container-fluid">
-			<!-- Logo -->
-			<a class="navbar-brand" asp-controller="Movie" asp-action="ShowAll">
-				<img src="~/img/logo.png" alt="logo" width="100" />
-			</a>
+				<!-- Collapsible Menu -->
+				<div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+					<ul class="navbar-nav align-items-center">
+						<li class="nav-item">
+							<a class="nav-link text-light mx-2 active" asp-controller="Movie"
+								asp-action="ShowAll">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light mx-2" asp-controller="Movie" asp-action="MoviePagenation"
+								asp-route-type="MovieLastest">Movies</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light mx-2" asp-controller="Movie" asp-action="MovieTopRated">Top
+								Movies</a>
+						</li>
 
-			<!-- Toggler Button for Mobile -->
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+						@if (User.Identity.IsAuthenticated)
+						{
+							@if (User.IsInRole("Admin"))
+							{
+								<li class="nav-item">
+									<a class="nav-link text-light mx-2" asp-controller="Movie" asp-action="Index">
+										<i class="bi bi-speedometer2 me-1"></i> Dashboard
+									</a>
+								</li>
+							}
+						}
 
-			<!-- Collapsible Menu -->
-			<div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-				<ul class="navbar-nav align-items-center">
-					<li class="nav-item">
-						<a class="nav-link text-light mx-2 active" asp-controller="Movie" asp-action="ShowAll">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-light mx-2" asp-controller="Movie" asp-action="MoviePagenation" asp-route-type="MovieLastest">Movies</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-light mx-2" asp-controller="Movie" asp-action="MovieTopRated">Top Movies</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle text-light mx-2" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
-						<ul class="dropdown-menu bg-dark">
-							<li><a class="dropdown-item text-light" asp-controller="Movie" asp-action="MovieDetailPage" asp-route-id="1">Movie Details</a></li>
-						</ul>
-					</li>
-					
-					<li class="nav-item">
-						<form class="d-flex" asp-action="MoviePagenation" asp-controller="Movie" method="get">
-							<input type="text" class="form-control me-2" name="movieName" placeholder="Search">
-							<input type="hidden" name="type" value="MovieSearch" />
-							<button class="btn btn-outline-light" type="submit"><i class="icofont icofont-search"></i></button>
-						</form>
-					</li>
-					
-				</ul>
+						<li class="nav-item">
+							<form class="d-flex align-items-center" asp-action="MoviePagenation" asp-controller="Movie"
+								method="get">
+								<div class="input-group search-group"
+									style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease;">
+									<input type="text"
+										class="form-control bg-transparent text-light border-0 shadow-none"
+										name="movieName" placeholder="Search movies..."
+										style="border-radius: 25px 0 0 25px; padding-left: 15px;"
+										aria-label="Search movies">
+									<input type="hidden" name="type" value="MovieSearch" />
+									<button class="btn btn-link text-light border-0 position-relative" type="submit"
+										style="border-radius: 0 25px 25px 0; padding: 0 15px;">
+										<i class="bi bi-search"></i>
+									</button>
+								</div>
+							</form>
+						</li>
+
+
+						@if (User.Identity.IsAuthenticated)
+						{
+
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle d-flex align-items-center text-white" href="#"
+									role="button" data-bs-toggle="dropdown" style="gap: 8px;">
+									<i class="bi bi-person-circle fs-5"></i>
+									<span class="d-none d-md-inline">@User.Identity.Name</span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-end"
+									style="background: #13151f; border: 1px solid rgba(255, 255, 255, 0.1);">
+									<li>
+										<a asp-controller="Account" asp-action="Logout" class="dropdown-item "
+										   style="background: none; border: none; width: 100%; text-align: left; color:#eb315a">
+											<i class="bi bi-box-arrow-right me-2"></i>Logout
+										</a>
+									</li>
+								</ul>
+							</li>
+
+						}
+						else
+						{
+							<div class="ms-lg-3 mt-3 mt-lg-0">
+								<a asp-action="Login" asp-controller="Account" class="btn btn-danger">
+									<i class="bi bi-person-fill me-1"></i> Sign In
+								</a>
+							</div>
+						}
+					</ul>
+				</div>
 			</div>
-		</div>
-	</nav>
- *@
-	<div class="login-area">
-		<div class="login-box">
-			<a href="#"><i class="icofont icofont-close"></i></a>
-			<h2>LOGIN</h2>
-			<form action="#">
-				<h6>USERNAME OR EMAIL ADDRESS</h6>
-				<input type="text" />
-				<h6>PASSWORD</h6>
-				<input type="text" />
-				<div class="login-remember">
-					<input type="checkbox" />
-					<span>Remember Me</span>
-				</div>
-				<div class="login-signup">
-					<span>SIGNUP</span>
-				</div>
-				<a href="#" class="theme-btn">LOG IN</a>
-				<span>Or Via Social</span>
-				<div class="login-social">
-					<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-					<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-					<a href="#"><i class="icofont icofont-social-linkedin"></i></a>
-					<a href="#"><i class="icofont icofont-social-google-plus"></i></a>
-					<a href="#"><i class="icofont icofont-camera"></i></a>
-				</div>
-			</form>
+		</nav>
+	</header>
 
-		</div>
-	</div>
-	@* <div class="buy-ticket"> *@
-	@* 	<div class="container"> *@
-	@* 		<div class="buy-ticket-area"> *@
-	@* 			<a href="#"><i class="icofont icofont-close"></i></a> *@
-	@* 			<div class="row"> *@
-	@* 				<div class="col-lg-8"> *@
-	@* 					<div class="buy-ticket-box"> *@
-	@* 						<h4>Buy Tickets</h4> *@
-	@* 						<h5>Seat</h5> *@
-	@* 						<h6>Screen</h6> *@
-	@* 						<div class="ticket-box-table"> *@
-	@* 							<table class="ticket-table-seat"> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 							</table> *@
-	@* 							<table> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>2</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>3</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>4</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>5</td> *@
-	@* 								</tr> *@
-	@* 							</table> *@
-	@* 							<table class="ticket-table-seat"> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td class="active">1</td> *@
-	@* 									<td class="active">1</td> *@
-	@* 									<td class="active">1</td> *@
-	@* 									<td class="active">1</td> *@
-	@* 									<td class="active">1</td> *@
-	@* 									<td class="active">1</td> *@
-	@* 									<td class="active">1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 							</table> *@
-	@* 							<table> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>2</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>3</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>4</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>5</td> *@
-	@* 								</tr> *@
-	@* 							</table> *@
-	@* 							<table class="ticket-table-seat"> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 								<tr> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 									<td>1</td> *@
-	@* 								</tr> *@
-	@* 							</table> *@
-	@* 						</div> *@
-	@* 						<div class="ticket-box-available"> *@
-	@* 							<input type="checkbox" /> *@
-	@* 							<span>Available</span> *@
-	@* 							<input type="checkbox" checked /> *@
-	@* 							<span>Unavailable</span> *@
-	@* 							<input type="checkbox" /> *@
-	@* 							<span>Selected</span> *@
-	@* 						</div> *@
-	@* 						<a href="#" class="theme-btn">previous</a> *@
-	@* 						<a href="#" class="theme-btn">Next</a> *@
-	@* 					</div> *@
-	@* 				</div> *@
-	@* 				<div class="col-lg-3 offset-lg-1"> *@
-	@* 					<div class="buy-ticket-box mtr-30"> *@
-	@* 						<h4>Your Information</h4> *@
-	@* 						<ul> *@
-	@* 							<li> *@
-	@* 								<p>Location</p> *@
-	@* 								<span>HB Cinema Box Corner</span> *@
-	@* 							</li> *@
-	@* 							<li> *@
-	@* 								<p>TIME</p> *@
-	@* 								<span>2018.07.09   20:40</span> *@
-	@* 							</li> *@
-	@* 							<li> *@
-	@* 								<p>Movie name</p> *@
-	@* 								<span>Home Alone</span> *@
-	@* 							</li> *@
-	@* 							<li> *@
-	@* 								<p>Ticket number</p> *@
-	@* 								<span>2 Adults, 2 Children, 2 Seniors</span> *@
-	@* 							</li> *@
-	@* 							<li> *@
-	@* 								<p>Price</p> *@
-	@* 								<span>89$</span> *@
-	@* 							</li> *@
-	@* 						</ul> *@
-	@* 					</div> *@
-	@* 				</div> *@
-	@* 			</div> *@
-	@* 		</div> *@
-	@* 	</div> *@
-	@* </div><!-- header section end --> *@
-	@RenderBody()
+	<main>
+		@RenderBody()
+	</main>
 
 
 	<footer class="footer">
@@ -380,7 +136,12 @@
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
 					<div class="widget">
-						<img src="~/img/logo.png" alt="about" />
+						<a class="navbar-brand" asp-controller="Movie" asp-action="ShowAll">
+							<svg width="50" height="50" viewBox="0 0 567 567" fill="none">
+								<path d="M324 123.9V280.1C367.1 280.1 402.1 245.1 402.1 202C402 158.9 367.1 123.9 324 123.9ZM215.5 123.9H134V280.1H215.6C258.7 280.1 293.7 245.1 293.7 202C293.6 158.9 258.7 123.9 215.5 123.9ZM485.9 358.1V322.5C468.8 345.5 447 364.7 421.8 378.7L485.9 491.9V423.9L566.9 566.9H388L324 453.8V566.9H284.9L192.6 404H134V566.9H0V0H215.5C255.4 0 292.6 11.6 323.9 31.6V0C390.2 0 449 32 485.9 81.3V45.8C531.1 82.8 559.9 139.1 559.9 202C559.9 265 531.1 321.1 485.9 358.1Z"
+									  fill="white"></path>
+							</svg>
+						</a>
 						<p>7th Harley Place, London W1G 8LZ United Kingdom</p>
 						<h6><span>Call us: </span>(+880) 111 222 3456</h6>
 					</div>
@@ -411,22 +172,34 @@
 						<h4>Newsletter</h4>
 						<p>Subscribe to our newsletter system now to get latest news from us.</p>
 						<form action="#">
-							<input type="text" placeholder="Enter your email.." />
+							<input type="text" placeholder="Enter your email..">
 							<button>SUBSCRIBE NOW</button>
 						</form>
 					</div>
 				</div>
-				<div class="copyright-content">
-					<a href="#" class="scrollToTop">
-						Back to top<i class="icofont icofont-arrow-up"></i>
-					</a>
-				</div>
-
 			</div>
-			<hr />
+			<hr>
 		</div>
-		
-	</footer><!-- footer section end -->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 text-center text-lg-left">
+						<div class="copyright-content">
+							<p><a target="_blank" href="https://www.templateshub.net"></a></p>
+						</div>
+					</div>
+					<div class="col-lg-6 text-center text-lg-right">
+						<div class="copyright-content">
+							<a href="#" class="scrollToTop" style="display: inline;">
+								Back to top<i class="icofont icofont-arrow-up"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
 
 	<script src="~/js/jquery.min.js"></script>
 	<!-- Bootstrap JS -->
@@ -442,7 +215,7 @@
 	<!-- main JS -->
 	<script src="~/js/main.js"></script>
 	<script>
-		window.addEventListener('scroll', function() {
+		window.addEventListener('scroll', function () {
 			const navbar = document.getElementById('mainNavbar');
 			if (window.scrollY > 350) {
 				navbar.classList.add('scrolled');
@@ -451,6 +224,7 @@
 			}
 		});
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 	@RenderSection("Scripts", required: false)
 

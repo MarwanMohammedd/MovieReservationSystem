@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using MovieReservationSystem.DataAccess.UnitOfWork;
@@ -28,6 +29,7 @@ namespace MovieReservationSystem.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddComment([FromBody] ReviewViewModel reviewViewModel)
         {
             if (ModelState.IsValid)

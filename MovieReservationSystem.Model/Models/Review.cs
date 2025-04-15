@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MovieReservationSystem.Model.Models{
-    public class Review
+    public class Review: BaseEnitiy
     {
         [ForeignKey("User")]
         public int UserId { get; set; }
